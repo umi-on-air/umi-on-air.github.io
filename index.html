@@ -4,48 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-    content="UMI on Legs: Making Manipulation Policies Mobile with a Manipulation-Centric Whole-body Controller">
-  <meta name="keywords" content="Robotics, Quadruped, Whole-body Control, Whole-body Manipulation">
+    content="UMI-on-Air: Embodiment-Aware Guidance for Embodiment-Agnostic Visuomotor Policies">
+  <meta name="keywords" content="Robotics, Aerial Manipulation, Embodiment-Aware Guidance, Visuomotor Policies">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
-    UMI on Legs: Making Manipulation Policies Mobile with a Manipulation-Centric Whole-body Controller
+    UMI-on-Air
   </title>
 
-  <link rel="apple-touch-icon" sizes="57x57"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="60x60"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-60x60.png" />
-  <link rel="apple-touch-icon" sizes="72x72"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="76x76"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-180x180.png" />
-
-  <link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-196x196.png"
-    sizes="196x196" />
-  <link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-192x192.png"
-    sizes="192x192" />
-  <link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-128.png" sizes="128x128" />
-  <link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-32x32.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-16x16.png" sizes="16x16" />
-
-  <link rel="mask-icon" href="//www-media.stanford.edu/assets/favicon/safari-pinned-tab.svg" color="#ffffff">
-  <meta name="application-name" content="Stanford University" />
-  <meta name="msapplication-TileColor" content="#FFFFFF" />
-  <meta name="msapplication-TileImage" content="//www-media.stanford.edu/assets/favicon/mstile-144x144.png" />
-  <meta name="msapplication-square70x70logo" content="//www-media.stanford.edu/assets/favicon/mstile-70x70.png" />
-  <meta name="msapplication-square150x150logo" content="//www-media.stanford.edu/assets/favicon/mstile-150x150.png" />
-  <meta name="msapplication-square310x310logo" content="//www-media.stanford.edu/assets/favicon/mstile-310x310.png" />
+  <link rel="icon" type="image/png" href="./static/images/scs.png" />
+  <link rel="shortcut icon" href="./static/images/scs.png" type="image/png" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZ38WT2YPD"></script>
@@ -73,15 +40,14 @@
 </head>
 
 <section class="hero is-link is-fullheight video" style="overflow: hidden; position:relative;">
-  <div class="hero-video" style="height: 100%; width: 177.77777778vh; min-width: 100%;min-height: 56.25vw;">
-    <video playsinline autoplay muted loop>
-      <source src=" ./static/videos/teaser-small.mp4" type="video/mp4">
+  <div class="hero-video is-hidden-mobile">
+    <video class="hero-video__media" playsinline autoplay muted loop>
+      <source src=" ./static/videos/teaser.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="hero-video is-hidden-tablet is-inline-block-mobile"
-    style="height: 154.28571428vw; width: 100%; min-width:64.81481481vh;min-height:100%;">
-    <video playsinline autoplay muted loop>
-      <source src=" ./static/videos/teaser-mobile-small.mp4" type="video/mp4">
+  <div class="hero-video is-hidden-tablet is-inline-block-mobile">
+    <video class="hero-video__media" playsinline autoplay muted loop>
+      <source src=" ./static/videos/teaser.mp4" type="video/mp4">
     </video>
   </div>
   <div class="overlay"></div>
@@ -91,7 +57,7 @@
       <div class="container is-size-5">
         <div class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item pl-4 pr-4" href="./static/umi-on-legs.pdf">
+            <a class="navbar-item pl-4 pr-4" href="./static/umi-on-air.pdf">
               <span class="icon" style="margin-right:5px;">
                 <img src="./static/images/pdf.svg" alt="PDF" />
               </span>
@@ -108,11 +74,11 @@
               </span>
               <span>Video</span> </a>
             <span class="navbar-item  pl-4 pr-4">
-              <a href="https://github.com/real-stanford/umi-on-legs" class="button is-inverted is-large">
+              <a href="" class="button is-inverted is-large" disabled>
                 <span class="icon">
                   <i class="fab fa-github"></i>
                 </span>
-                <span>Code</span>
+                <span>Code (coming soon)</span>
               </a>
             </span>
           </div>
@@ -124,27 +90,20 @@
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 12rem;">
-        UMI on Legs
+      <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 9rem;">
+        UMI on Air
       </h1>
-      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 4rem;">
-        Making Manipulation Policies Mobile with <br class="is-hidden-mobile"> Manipulation-Centric Whole-body
-        Controllers
+      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 3rem;">
+        Embodiment-Aware Guidance for <br class="is-hidden-mobile"> Embodiment-Agnostic Visuomotor Policies
       </h1>
       <h1 class="is-2 is-italic is-size-4-mobile" style="font-size: 2rem; opacity: 80%;">
-        Conference on Robot Learning 2024
-      </h1>
-      <h1 class="is-2 is-italic is-size-4-mobile" style="font-size: 1.5rem; opacity: 80%;">
-        <b>Spotlight</b> WCBM Workshop CoRL 2024
-      </h1>
-      <h1 class="is-2 is-italic is-size-4-mobile" style="font-size: 1.5rem; opacity: 80%;">
-        X-Embodiment Workshop CoRL 2024
+        In submission
       </h1>
       <div class="column has-text-centered is-hidden-tablet">
         <div class="publication-links">
           <!-- PDF Link. -->
           <span class="link-block">
-            <a href="./static/umi-on-legs.pdf" class="external-link button is-normal is-rounded is-dark">
+            <a href="./static/umi-on-air.pdf" class="external-link button is-normal is-rounded is-dark">
               <span class="icon">
                 <img src="./static/images/pdf.svg" alt="PDF" />
               </span>
@@ -170,12 +129,12 @@
           </span>
           <!-- Code Link. -->
           <span class="link-block">
-            <a href="https://github.com/real-stanford/umi-on-legs"
+            <a href="" disabled 
               class="external-link button is-normal is-rounded is-dark">
               <span class="icon">
                 <i class="fab fa-github"></i>
               </span>
-              <span>Code</span>
+              <span>Code (coming soon)</span>
             </a>
           </span>
         </div>
@@ -186,302 +145,275 @@
 
   <!-- Hero footer: will stick at the bottom -->
   <div class="hero-foot is-hidden-mobile">
-    <nav class="tabs is-boxed is-fullwidth is-size-5">
+    <nav class="tabs is-boxed is-fullwidth is-size-4">
       <ul>
-        <li><a href="#umi">Robot Data without Robots</a></li>
-        <li><a href="#task-tracking">Task Tracking without Simulating Tasks</a></li>
-        <li><a href="#wbc">Whole-body Controller</a></li>
-        <li><a href="#hardware">Hardware & System</a></li>
-        <li><a href="#qa">Q & A</a></li>
+        <li><a href="#problem">Problem Statement</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#simulation">Benchmark Suite</a></li>
+        <li><a href="#rw-results">RW Results</a></li>
+        <li><a href="#technical-video">Technical Video</a></li>
+        <li><a href="#team">Our Team</a></li>
       </ul>
     </nav>
   </div>
 </section>
 
-
-
-
-<section class="section is-medium" id="overview">
+<section class="section" id="problem">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths has-text-justified is-hidden-mobile">
-        <h2 class="subtitle ">
-          UMI on Legs is a framework for combining real-world human demonstrations with
-          simulation trained whole-body controllers, providing a scalable approach for manipulation skills on robot dogs
-          with arms.
-        </h2>
-        <br>
-        <h2 class="subtitle">
-          <strong>The best part?</strong>
-          You can plug-and-play your existing visuomotor policies onto a quadruped, making your manipulation
-          policies mobile!
-        </h2>
-      </div>
-
-      <div class="column is-four-fifths is-hidden-tablet has-text-justified-mobile">
-        <p>
-          UMI on Legs is a framework for combining real-world human demonstrations with
-          simulation trained whole-body controllers, providing a scalable approach for manipulation skills on robot dogs
-          with arms.
-        </p>
-        <br>
-        <p>
-          <strong>The best part?</strong>
-          You can plug-and-play your existing visuomotor policies onto a quadruped, making your manipulation
-          policies mobile!
-        </p>
-      </div>
-
-
+    <div class="content has-text-justified" style="margin-bottom: 2rem; margin-top: 2rem;">
+      <p>
+        We introduce UMI-on-Air, a framework for embodiment-aware deployment of embodiment-agnostic manipulation
+        policies. Our approach leverages diverse, unconstrained human demonstrations collected with a handheld gripper (UMI)
+        to train generalizable visuomotor policies.
+      </p>
+      <p style="margin-top: 0.75rem; margin-bottom: 3rem;">
+        A central challenge in transferring these policies to constrained robotic embodiments—such as aerial manipulators—is
+        the mismatch in control and robot dynamics, which often leads to out-of-distribution behaviors and poor execution.
+        To address this, we propose Embodiment-Aware Diffusion Policy (EADP), which couples a high-level UMI policy with a
+        low-level embodiment-specific controller at inference time.
+      </p>
     </div>
-  </div>
-</section>
-
-
-<section class="section" id="video">
-  <div class="container is-max-desktop">
-    <h2 class="title is-1 has-text-centered is-size-4-mobile">Technical Summary Video</h2>
-    <iframe width="100%" style="aspect-ratio: 16 / 9;" src="
-      https://www.youtube.com/embed/4Bp0q3xHTxE?si=ocAPm8KVAz-RZK59" title="UMI on Legs Technical Summary Video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  </div>
-</section>
-
-<section class="section is-small" id="umi">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-
-        <h2 class="title is-1 has-text-centered is-size-4-mobile">Robot Data without Robots</h2>
-        <div class="content">
-          <p>
-            Robots are the reason why it's been hard to collect a lot of robot data.
-            They are expensive 💸, tricky to control for dexterous tasks 🎾, and can punch a hole in the wall (or
-            itself) if you're not
-            careful ☠️.
-            What if we could collect robot data without robots?
-          </p>
-        </div>
-
-        <div class="content">
-          <p>
-            <a href="https://umi-gripper.github.io/">UMI</a> is a handheld gripper with a
-            GoPro attached.
-            With UMI, we can collect real-world robot demonstrations anywhere for any manipulation skill,
-            without any robots.
-            So just walk out into the wild with UMI, and start collecting data!
-          </p>
-        </div>
+    <div class="video-wrapper">
+      <div class="video-progress">
+        <div class="video-progress__bar"></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<video autoplay muted loop playsinline width="100%">
-  <source src="./static/videos/umi-grid-small.mp4" type="video/mp4">
-</video>
-
-<!-- 
-  <section class="section is-small" id="umi">
-    <div class="container is-max-desktop">
-
-      <h2 class="title is-1">Robot Data without Robots</h2>
-      <div class="content has-text-justified">
-        <p>
-          Robots are the reason why it's been hard to collect a lot of robot data.
-          They are expensive 💸, tricky to control for dexterous tasks 🎾, and can punch a hole in the wall (or
-          itself) if you're not
-          careful ☠️.
-          What if we could collect robot data without robots?
-        </p>
-      </div>
-
-      <video autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/umi-website.mp4" type="video/mp4">
+      <button class="video-restart-btn" type="button" aria-label="Replay video" title="Replay">
+        <i class="fas fa-rotate-right"></i>
+      </button>
+      <video id="problem-video" muted loop playsinline style="width: 100%; height: auto; margin-bottom: 1rem;">
+        <source src="./static/videos/eadp.mp4" type="video/mp4">
       </video>
-      <div class="content has-text-justified">
-        <p>
-          <a href="https://umi-gripper.github.io/">UMI</a> is a handheld gripper with a
-          GoPro attached.
-          With UMI, we can collect real-world robot demonstrations anywhere for any manipulation skill,
-          without any robots.
-        </p>
-      </div>
-
-    </div>
-  </section> -->
-
-<section class="section is-large" id="overview">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column has-text-justified is-four-fifths  is-hidden-mobile">
-        <h2 class="subtitle">
-          Training on UMI demonstrations gives a policy that outputs gripper movements from image inputs.
-          But how should the dog's legs move to track those gripper movements? 🤔
-        </h2>
-      </div>
-      <div class="column has-text-justified is-four-fifths is-hidden-tablet">
-        <p>
-          Training on UMI demonstrations gives a policy that outputs gripper movements from image inputs.
-          But how should the dog's legs move to track those gripper movements? 🤔
-        </p>
-      </div>
     </div>
   </div>
 </section>
 
-<section class="section is-small has-background-black has-text-light" id="task-tracking">
-  <div class="container is-max-desktop">
-
-    <h2 class="title is-1 has-text-white  is-size-4-mobile">Task Tracking without Simulating Tasks</h2>
+<section class="section has-background-black" id="method" style="padding-top: 2rem; padding-bottom: 4rem; position: relative;">
+  <div class="video-progress">
+    <div class="video-progress__bar"></div>
+  </div>
+  <button class="video-restart-btn" type="button" aria-label="Restart video" title="Restart">
+    <i class="fas fa-rotate-right"></i>
+  </button>
+  <video id="method-video" muted loop playsinline style="height: auto; display: block; margin: 0 auto;">
+    <source src="./static/videos/method.mp4" type="video/mp4">
+  </video>
+  <div class="container is-max-desktop has-text-light" style="padding-top: 3.0rem;">
     <div class="content has-text-justified">
       <p>
-        The promise of simulation engines is that of infinite data.
-        However, hidden in the terms and conditions that no one reads is the painful process of acquiring assets,
-        defining dense rewards,
-        rendering diverse
-        scenes, not to mention the sim-to-real gap 🙃.
-        All these problems are side-stepped or well-studied if we only use simulation to learn
-        whole-body
-        controllers.
+        Standard UMI policies generate action trajectories from visual observations, which are then tracked by controllers like MPC.
+        But this is a one-way process — the policy tells the robot how to move, while the robot cannot signal back whether those
+        actions are feasible. This mismatch often leads to failures, especially for embodiments like aerial manipulators.
       </p>
-    </div>
-
-    <div class="content has-text-justified">
       <p>
-        In a massively parallelized simulation, our robot learns through trial-and-error how to track UMI gripper
-        movements with stability and precision.
+        Our solution is two-way communication. We compute the gradient of the controller’s tracking cost with respect to the policy’s
+        actions, and feed it back into the diffusion process as guidance. This steers trajectory generation toward actions that the
+        embodiment can actually execute, closing the gap between general policies and embodiment-specific constraints. We call this
+        approach Embodiment-Aware Diffusion Policy (EADP).
       </p>
     </div>
   </div>
 </section>
 
-<video autoplay muted loop playsinline height="100%">
-  <source src="./static/videos/sim-small.mp4" type="video/mp4">
-</video>
-
-
-
-<section class="section is-small" id="wbc">
+<section class="section has-background-white" id="simulation" style="padding-top: 3rem; padding-bottom: 3rem;">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths is-centered">
-        <h2 class="title is-3 has-text-centered is-size-5-mobile">What makes a Whole-body Controller
-          "Manipulation-Centric"?
-        </h2>
+    <h2 class="title is-2 has-text-centered is-size-4-mobile">UMI Benchmark Suite</h2>
 
+    <div class="content has-text-justified" style="margin-top: 1rem; margin-bottom: 2rem;">
+      <p>
+        We evaluate EADP in a simulation suite covering four tasks: long-horizon manipulation (open-and-retrieve),
+        precision control (peg-in-hole), and articulated interactions (pick-and-place and valve rotation). Videos are shown in 2x speed.
+      </p>
+    </div>
 
-        <div class="content has-text-justified">
-          <p>
-            Manipulation policies typically predict gripper movements in a fixed world frame, and assumes that the robot
-            track those movements with <b>stability ⚖️</b> and <b>precision 🎯</b>.
-            This is exactly what we set out to learn with our manipulation-centric whole-body controller.
-          </p>
+    <div class="sim-nav" style="margin-top: 1rem;">
+      <button class="sim-nav-btn" id="sim-embodiment-prev" aria-label="Previous embodiment">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <div id="sim-embodiment-label" class="sim-embodiment-label" aria-live="polite">Oracle</div>
+      <button class="sim-nav-btn" id="sim-embodiment-next" aria-label="Next embodiment">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
 
+    <div id="sim-grid" class="columns is-multiline is-variable is-2 sim-fade" style="margin-top: 1.5rem;">
+      <div class="column is-half">
+        <div class="sim-tile">
+          <video class="sim-task-video" data-task="cabinet" autoplay muted loop playsinline>
+            <source src="./static/videos/sim_task_cabinet.mp4" type="video/mp4">
+          </video>
         </div>
-
-
-        <video autoplay muted loop playsinline height="100%">
-          <source src="./static/videos/stable-tracking-small.mp4" type="video/mp4">
-        </video>
-
-        <div class="content has-text-justified" id="stable-tracking">
-          <p>
-            <b>Stability ⚖️</b>
-            Our controller tracks gripper movements in the world frame, instead of the body frame like <a
-              href="#wbc-prior-works">most prior
-              works</a>.
-            This means if you push the robot's body, its arm will move in the opposite direction to compensate, as seen
-            above.
-            Now that's what I call a 6 DoF <a href="https://github.com/chvmp/chicken_head">chicken head</a> 🐔!
-          </p>
-        </div>
-
-
-
-
-        <video autoplay muted loop playsinline height="100%">
-          <source src="./static/videos/wbc-precision-small.mp4" type="video/mp4">
-        </video>
-        <div class="content has-text-justified" id="precise-tracking">
-          <p>
-            <b>Precision 🎯</b>
-            We give our controller a trajectory of gripper targets into the future, which allows it to anticipate future
-            gripper movements and reach all targets precisely.
-            For instance, in tossing a tennisball, the robot can brace its body for a high-velocity toss, planting its
-            front legs into the ground to supply enough tossing force.
-            Meanwhile, in pushing a heavy kettlebell, the robot can mobilize all its legs, knowing that it will have to
-            continue pushing forwards in the seconds to come.
-          </p>
-        </div>
+        <p class="has-text-centered is-size-6 has-text-weight-semibold" style="margin-top: 0.25rem;">Open-and-Retrieve</p>
       </div>
+      <div class="column is-half">
+        <div class="sim-tile">
+          <video class="sim-task-video" data-task="peg_in_hole" autoplay muted loop playsinline>
+            <source src="./static/videos/sim_task_peg_in_hole.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="has-text-centered is-size-6 has-text-weight-semibold" style="margin-top: 0.25rem;">Peg-in-Hole</p>
+      </div>
+      <div class="column is-half">
+        <div class="sim-tile">
+          <video class="sim-task-video" data-task="rotate_valve" autoplay muted loop playsinline>
+            <source src="./static/videos/sim_task_rotate_valve.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="has-text-centered is-size-6 has-text-weight-semibold" style="margin-top: 0.25rem;">Rotate-Valve</p>
+      </div>
+      <div class="column is-half">
+        <div class="sim-tile">
+          <video class="sim-task-video" data-task="pick_and_place" autoplay muted loop playsinline>
+            <source src="./static/videos/sim_task_pick_and_place.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="has-text-centered is-size-6 has-text-weight-semibold" style="margin-top: 0.25rem;">Pick-and-Place</p>
+      </div>
+    </div>
+
+    <div class="content has-text-justified" style="margin-top: 2rem; margin-bottom: 0.5rem;">
+      <p>
+        Across these benchmarks, performance consistently declines as embodiments become less capable of tracking policy trajectories,
+        revealing the embodiment gap. EADP improves success rates across all tasks and narrows the embodiment gap compared to
+        standard diffusion policies.
+      </p>
+    </div>
+
+    <div class="has-text-centered" style="margin-top: 2rem;">
+      <img src="./static/images/result.png" alt="Simulation Results" style="max-width: 100%; height: auto; margin-bottom: 2rem;" />
     </div>
   </div>
 </section>
 
 
-
-<section class="section is-small" id="hardware">
+<section class="section has-background-black has-text-light" id="rw-results" style="padding-top: 3rem; padding-bottom: 3rem; position: relative;">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-1 has-text-centered is-size-4-mobile">Meet Espresso and Oat Milk!</h2>
-        <div class="content">
-          <p>
-            Following our lab's <a href="https://real.stanford.edu/lab.html#robot-grid">caffinated drinks naming
-              tradition</a>, I've decided to name our quadruped Espresso and our new arm Oat Milk.
-            My hope is that, when combined together, Espresso and Oat Milk will be as capable as Latte (our UR5 which
-            has <a href="https://flingbot.cs.columbia.edu/">unfolded</a> and <a
-              href="https://clothfunnels.cs.columbia.edu/">folded</a> cloths and <a
-              href="https://umi-gripper.github.io/">washed dishes</a>).
-            Deploying policies from Latte to Espresso and Oat Milk, as we've done, is the first step 🚀.
-          </p>
+    <h2 class="title is-2 has-text-centered has-text-white is-size-4-mobile">Real-World Results</h2>
+
+    <div class="rw-box" style="margin-top: 1.5rem;">
+      <button id="rw-restart" class="video-restart-btn" type="button" aria-label="Restart videos" title="Restart all">
+        <i class="fas fa-rotate-right"></i>
+      </button>
+
+      <div id="rw-pih" class="rw-grid">
+        <div class="columns is-multiline is-variable is-3">
+      <!-- DP row -->
+      <div class="column is-full">
+        <p class="has-text-centered has-text-grey-light is-size-6" style="margin-bottom: 1.0rem; margin-top: 0.75rem;">Diffusion Policy</p>
+        <div class="columns is-mobile is-variable is-2">
+          <div class="column">
+            <div class="sim-tile">
+              <video class="rw-video" muted playsinline>
+                <source src="./static/videos/dp_cropped_8x/1_cropped_8x.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column">
+            <div class="sim-tile">
+              <video class="rw-video" muted playsinline>
+                <source src="./static/videos/dp_cropped_8x/2-fail_cropped_8x.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column">
+            <div class="sim-tile">
+              <video class="rw-video" muted playsinline>
+                <source src="./static/videos/dp_cropped_8x/3-fail_cropped_8x.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column">
+            <div class="sim-tile">
+              <video class="rw-video" muted playsinline>
+                <source src="./static/videos/dp_cropped_8x/4_cropped_8x.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column">
+            <div class="sim-tile">
+              <video class="rw-video" muted playsinline>
+                <source src="./static/videos/dp_cropped_8x/5_cropped_8x.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
         </div>
-        <img src="./static/images/espresso-and-latte.jpeg" alt="espresso-and-latte" />
+      </div>
 
-        <div class="content">
-          <p>
-            Espresso - Oat Milk comes with a GoPro on its head 🎩, a 3D printed gripper at the end of its arm 🦾, and an
-            iPhone on its butt
-            🍑.
-            The GoPro streams visual observations through a capture card, serving as the policy observation.
-            Meanwhile, the iPhone runs a custom iOS app we developed, which streams the robot's body pose, allowing <a
-              href="stable-tracking">world frame stabilization</a>.
-          </p>
+      <!-- EADP row -->
+      <div class="column is-full" style="margin-top: 2rem;">
+        <p class="has-text-centered has-text-grey-light is-size-6" style="margin-bottom: 1.0rem;">Embodiment-Aware Diffusion Policy</p>
+        <div class="columns is-mobile is-variable is-2">
+          <div class="column">
+            <div class="sim-tile">
+              <video class="rw-video" muted playsinline>
+                <source src="./static/videos/eadp_cropped_8x/1_cropped_8x.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column">
+            <div class="sim-tile">
+              <video class="rw-video" muted playsinline>
+                <source src="./static/videos/eadp_cropped_8x/2_cropped_8x.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column">
+            <div class="sim-tile">
+              <video class="rw-video" muted playsinline>
+                <source src="./static/videos/eadp_cropped_8x/3_cropped_8x.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column">
+            <div class="sim-tile">
+              <video class="rw-video" muted playsinline>
+                <source src="./static/videos/eadp_cropped_8x/4_cropped_8x.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column">
+            <div class="sim-tile">
+              <video class="rw-video" muted playsinline>
+                <source src="./static/videos/eadp_cropped_8x/5_cropped_8x.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
         </div>
-
-
-
+        </div>
       </div>
     </div>
+    </div>
+       <!-- Additional RW looping demos (own rows, no outer box) -->
+       <div class="columns is-mobile is-variable is-2" style="margin-top: 3em;">
+        <div class="column is-full">
+          <div class="tile-auto">
+            <video autoplay muted loop playsinline>
+              <source src="./static/videos/lemon_harvesting.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-mobile is-variable is-2" style="margin-top: 3rem; margin-bottom: 1rem;">
+        <div class="column is-full">
+          <div class="tile-auto">
+            <video autoplay muted loop playsinline>
+              <source src="./static/videos/lightbulb_insertion.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
   </div>
 </section>
 
-
-<section class="section">
-  <div class="container is-max-desktop">
+<section class="section" id="technical-video">
+  <div class="container is-fullhd">
     <div class="box pt-6 pb-6">
       <div class="columns is-max-desktop is-centered ">
-        <div class="column is-four-fifths is-centered">
-          <h2 class="title is-2 has-text-centered is-size-5-mobile">Try out UMI on Legs!</h2>
-          <video autoplay muted loop playsinline width="100%">
-            <!-- <source src="./static/videos/cup-in-the-wild-small.mp4" type="video/mp4"> -->
-            <source src="./static/videos/failures-small.mp4" type="video/mp4">
-          </video>
-          <div class="content">
-            Quadruped manipulation has lots of moving parts, and any small bug can lead to a big mess 🤕
-            We've spent a lot of time figuring out the networking, operating systems, and hardware.
-            We've broken 3 quadruped legs, fried 1 Jetson, and ripped one pair of pants, so you don't have to 👖
-          </div>
-          <div class="content">
-          </div>
-          <div class="has-text-centered">
-            <a href="https://github.com/real-stanford/umi-on-legs">
-              <button class="button is-primary">Download Code</button>
-            </a>
-          </div>
+        <div class="column is-9 is-centered">
+          <h2 class="title is-3 has-text-centered is-size-5-mobile">Technical Summary Video</h2>
+          <iframe width="100%" style="aspect-ratio: 16 / 9;" src="
+            https://www.youtube.com/embed/4Bp0q3xHTxE?si=ocAPm8KVAz-RZK59" title="UMI on Air Technical Summary Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
         </div>
       </div>
@@ -491,46 +423,76 @@
 
 
 
-<section class="section is-small">
+<section class="section is-small" id="team">
   <div class="container is-max-desktop">
     <h2 class="title is-3 is-size-4-mobile">Our Team</h2>
     <div class="container has-text-centered">
       <div class="publication-authors is-flex justify-content is-justify-content-space-around is-hidden-mobile">
         <div class="author-block has-text-centered has-addons-centered">
           <figure class="image is-128x128">
+            <a href="https://hgupt3.github.io/">
+              <img class="is-rounded
+                      " src="./static/images/harsh.jpg" alt="Harsh Gupta">
+            </a>
+          </figure>
+          <a href="https://hgupt3.github.io/">Harsh Gupta</a><sup>†</sup>
+        </div>
+        <div class="author-block has-text-centered has-addons-centered">
+          <figure class="image is-128x128">
+            <a href="https://xiaofeng-guo.github.io/">
+              <img class="is-rounded
+                      " src="./static/images/xiaofeng.jpg" alt="Xiaofeng Gao">
+            </a>
+          </figure>
+          <a href="https://xiaofeng-guo.github.io/">Xiaofeng Gao</a><sup>†</sup>
+        </div>
+        <div class="author-block has-text-centered has-addons-centered">
+          <figure class="image is-128x128">
             <a href="https://huy-ha.github.io/">
               <img class="is-rounded
                       " src="./static/images/huy.jpg" alt="Huy Ha">
             </a>
           </figure>
-          <a href="https://huy-ha.github.io/">Huy Ha</a><sup>*,1,2</sup>
+          <a href="https://huy-ha.github.io/">Huy Ha</a><sup>‡</sup>
         </div>
         <div class="author-block has-text-centered has-addons-centered">
           <figure class="image is-128x128">
-            <a href="https://yihuai-gao.github.io/">
+            <a href="https://chuerpan.com/">
               <img class="is-rounded
-                      " src="./static/images/yihuai.png" alt="Yihuai Gao">
+                      " src="./static/images/chuer.jpg" alt="Cheur Pan">
             </a>
           </figure>
-          <a href="https://yihuai-gao.github.io/">Yihuai Gao</a><sup>*,1</sup>
+          <a href="https://chuerpan.com/">Cheur Pan</a><sup>‡</sup>
         </div>
         <div class="author-block has-text-centered has-addons-centered">
           <figure class="image is-128x128">
-            <a href="https://zipengfu.github.io/">
+            <a href="https://caomuqing.github.io/">
               <img class="is-rounded
-                      " src="./static/images/zipeng.jpg" alt="Zipeng Fu">
+                      " src="./static/images/muqing.jpeg" alt="Muqing Cao">
             </a>
           </figure>
-          <a href="https://zipengfu.github.io/">Zipeng Fu</a><sup>1</sup>
+          <a href="https://caomuqing.github.io/">Muqing Cao</a><sup>†</sup>
         </div>
         <div class="author-block has-text-centered has-addons-centered">
           <figure class="image is-128x128">
-            <a href="https://www.jie-tan.net/">
+            <a href="https://dongjaelee95.github.io/">
               <img class="is-rounded
-                      " src="./static/images/jie.jpg" alt="Jie Tan">
+                      " src="./static/images/dongjae.png" alt="Dongjae Lee">
             </a>
           </figure>
-          <a href="https://www.jie-tan.net/">Jie Tan</a><sup>3</sup>
+          <a href="https://dongjaelee95.github.io/">Dongjae Lee</a><sup>†</sup>
+        </div>
+      </div>
+
+      <div class="publication-authors is-flex justify-content is-justify-content-center is-hidden-mobile" style="column-gap: 2.5rem;">
+        <div class="author-block has-text-centered has-addons-centered">
+          <figure class="image is-128x128">
+            <a href="https://theairlab.org/team/sebastian/">
+              <img class="is-rounded
+                      " src="./static/images/basti.jpg" alt="Sebastian Scherer">
+            </a>
+          </figure>
+          <a href="https://theairlab.org/team/sebastian/">Sebastian Scherer</a><sup>†</sup>
         </div>
         <div class="author-block has-text-centered has-addons-centered">
           <figure class="image is-128x128">
@@ -539,46 +501,85 @@
                       " src="./static/images/shuran.jpg" alt="Shuran Song">
             </a>
           </figure>
-          <a href="https://shurans.github.io/">Shuran Song</a><sup>1,2</sup>
+          <a href="https://shurans.github.io/">Shuran Song</a><sup>‡</sup>
+        </div>
+        <div class="author-block has-text-centered has-addons-centered">
+          <figure class="image is-128x128">
+            <a href="https://www.gshi.me/">
+              <img class="is-rounded
+                      " src="./static/images/guanya.jpg" alt="Guanya Shi">
+            </a>
+          </figure>
+          <a href="https://www.gshi.me/">Guanya Shi</a><sup>†</sup>
         </div>
       </div>
 
       <div class="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-evenly is-hidden-tablet">
         <div class="author-block has-text-centered has-addons-centered">
           <figure class="image  is-96x96">
+            <a href="https://hgupt3.github.io/">
+              <img class="is-rounded
+                      " src="./static/images/harsh.jpg" alt="Harsh Gupta">
+            </a>
+          </figure>
+          <a href="https://hgupt3.github.io/">Harsh Gupta</a><sup>†</sup>
+        </div>
+        <div class="author-block has-text-centered has-addons-centered">
+          <figure class="image is-96x96">
+            <a href="https://xiaofeng-guo.github.io/">
+              <img class="is-rounded
+                      " src="./static/images/xiaofeng.jpg" alt="Xiaofeng Gao">
+            </a>
+          </figure>
+          <a href="https://xiaofeng-guo.github.io/">Xiaofeng Gao</a><sup>†</sup>
+        </div>
+        <div class="author-block has-text-centered has-addons-centered">
+          <figure class="image  is-96x96">
             <a href="https://huy-ha.github.io/">
               <img class="is-rounded
                       " src="./static/images/huy.jpg" alt="Huy Ha">
             </a>
           </figure>
-          <a href="https://huy-ha.github.io/">Huy Ha</a><sup>*,1,2</sup>
+          <a href="https://huy-ha.github.io/">Huy Ha</a><sup>‡</sup>
         </div>
         <div class="author-block has-text-centered has-addons-centered">
           <figure class="image  is-96x96">
-            <a href="https://yihuai-gao.github.io/">
+            <a href="https://chuerpan.com/">
               <img class="is-rounded
-                      " src="./static/images/yihuai.png" alt="Yihuai Gao">
+                      " src="./static/images/chuer.jpg" alt="Cheur Pan">
             </a>
           </figure>
-          <a href="https://yihuai-gao.github.io/">Yihuai Gao</a><sup>*,1</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered">
-          <figure class="image is-96x96">
-            <a href="https://zipengfu.github.io/">
-              <img class="is-rounded
-                      " src="./static/images/zipeng.jpg" alt="Zipeng Fu">
-            </a>
-          </figure>
-          <a href="https://zipengfu.github.io/">Zipeng Fu</a><sup>1</sup>
+          <a href="https://chuerpan.com/">Cheur Pan</a><sup>‡</sup>
         </div>
         <div class="author-block has-text-centered has-addons-centered">
           <figure class="image  is-96x96">
-            <a href="https://www.jie-tan.net/">
+            <a href="https://caomuqing.github.io/">
               <img class="is-rounded
-                      " src="./static/images/jie.jpg" alt="Jie Tan">
+                      " src="./static/images/muqing.jpeg" alt="Muqing Cao">
             </a>
           </figure>
-          <a href="https://www.jie-tan.net/">Jie Tan</a><sup>3</sup>
+          <a href="https://caomuqing.github.io/">Muqing Cao</a><sup>†</sup>
+        </div>
+        <div class="author-block has-text-centered has-addons-centered">
+          <figure class="image  is-96x96">
+            <a href="https://dongjaelee95.github.io/">
+              <img class="is-rounded
+                      " src="./static/images/dongjae.png" alt="Dongjae Lee">
+            </a>
+          </figure>
+          <a href="https://dongjaelee95.github.io/">Dongjae Lee</a><sup>†</sup>
+        </div>
+      </div>
+
+      <div class="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-center is-hidden-tablet" style="column-gap: 2.5rem;">
+        <div class="author-block has-text-centered has-addons-centered">
+          <figure class="image  is-96x96">
+            <a href="https://theairlab.org/team/sebastian/">
+              <img class="is-rounded
+                      " src="./static/images/basti.jpg" alt="Sebastian Scherer">
+            </a>
+          </figure>
+          <a href="https://theairlab.org/team/sebastian/">Sebastian Scherer</a><sup>†</sup>
         </div>
         <div class="author-block has-text-centered has-addons-centered">
           <figure class="image  is-96x96">
@@ -587,148 +588,33 @@
                       " src="./static/images/shuran.jpg" alt="Shuran Song">
             </a>
           </figure>
-          <a href="https://shurans.github.io/">Shuran Song</a><sup>1,2</sup>
+          <a href="https://shurans.github.io/">Shuran Song</a><sup>‡</sup>
+        </div>
+        <div class="author-block has-text-centered has-addons-centered">
+          <figure class="image is-96x96">
+            <a href="https://www.gshi.me/">
+              <img class="is-rounded
+                      " src="./static/images/guanya.jpg" alt="Guanya Shi">
+            </a>
+          </figure>
+          <a href="https://www.gshi.me/">Guanya Shi</a><sup>†</sup>
         </div>
       </div>
 
-
-
       <div class="publication-authors">
-        <span class="author-block"><sup>1</sup>Stanford University, </span>
-        <span class="author-block"><sup>2</sup>Columbia University, </span>
-        <span class="author-block"><sup>3</sup>Google DeepMind, </span>
-        <span class="author-block">*Equal contribution</span>
+        <span class="author-block"><sup>†</sup>Carnegie Mellon University</span>
+        <span class="author-block"><sup>‡</sup>Stanford University </span>
       </div>
 
 
     </div>
     <br>
-    <pre class="is-hidden-mobile"><code>@inproceedings{ha2024umilegs,
-  title={{UMI} on Legs: Making Manipulation Policies Mobile with Manipulation-Centric Whole-body Controllers},
-  author={Huy Ha and Yihuai Gao and Zipeng Fu and Jie Tan and Shuran Song},
-  year={2024},
-  booktitle={Proceedings of the 2024 Conference on Robot Learning},
-}</code></pre>
+    <pre class="is-hidden-mobile"><code>@inproceedings{to be added}</code></pre>
     <p>
-      If you have any questions, please contact <a href="https://huy-ha.github.io/">Huy Ha</a> and <a
-        href="https://yihuai-gao.github.io/">Yihuai Gao</a> 🐕
+      If you have any questions, please contact <a href="https://hgupt3.github.io/">Harsh Gupta</a>.
     </p>
   </div>
 </section>
-
-
-
-<section class="section is-small" id="qa">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered ">
-      <div class="column is-four-fifths">
-        <h2 class="title is-4 has-text-centered is-size-5-mobile">Questions & Answers</h2>
-
-        <div class="block">
-          <h3 class="title is-6">
-            What can't this framework do?
-          </h3>
-          <p>
-            There is only a one-way communication from the manipulation visuo-motor policy to the whole-body
-            controller,
-            via an end-effector trajectory interface. This has two main drawbacks:<br><br>
-            <b>(1) Guarantee Reachability</b>.
-            Sometimes the manipulation policy would ask the controller to move to target poses it can't track, like
-            ones
-            that are too high or rotate the gripper by too much.
-            Ideally, the controller could communicate to the manipulation policy what the
-            hardware is capable of as well.
-            <br><br>
-            <b>(2) Track Multiple End-effectors</b>.
-            Ideally, our robots would involve their entire body in manipulation tasks, not just its gripper.
-            Towards involving the robot's feet, body, and arms in manipulation as well, the real-world data collection
-            platform,
-            manipulation-controller interface, and the whole-body controller formulation has some work to do.
-          </p>
-        </div>
-
-        <div class="block">
-          <h3 class="title is-6">
-            I want to build a foundation policy for robotics.
-            What can UMI on Legs teach me about how to go about it?
-          </h3>
-          <p>
-            Tossing was flashy, but the in-the-wild cup rearrangement task (shown below) changed my perspective on what
-            a foundation policy for robotics should look like.
-            <video autoplay muted loop playsinline width="100%">
-              <source src="./static/videos/cup-in-the-wild-small.mp4" type="video/mp4">
-            </video>
-            We were able to just plug-and-play UMI's publicly released policy onto our robot dog (seen above in 1x
-            speed)!
-            With an expressive embodiment-agnostic interface in place, I'm optimistic about a world where people can
-            separately develop ever more general
-            visuo-motor policies and ever more robust WBCs, knowing that they can be plugged-and-played together in the
-            end.
-
-          </p>
-        </div>
-
-
-        <div class="block">
-          <h3 class="title is-6">
-            Can learning to track end-effector trajectories <i>really</i> result in kettlebell pushing?
-          </h3>
-          <p>
-            Yes, and no 🙃 Let me explain.<br><br>
-            Yes, because the kettlebell does get pushed to its target zone in our experiments, which technically
-            counts
-            as a success.
-            No, because the robot's behavior was not very elegant, despite the hardware being physically capable of
-            much
-            smoother, stronger pushes.
-            We've included mass, center of mass, and other joint domain randomization during training, but additionally
-            including force-torque perturbations at the end-effector during WBC
-            training could address take us a step closer to more robust pushing behaviors.
-          </p>
-        </div>
-
-
-        <div id="visualization-qa" class="block">
-          <h3 class="title is-6">What simulator do you use? Why does it look so realistic?</h3>
-          <p>
-            In this project, I use the <a href="https://developer.nvidia.com/isaac-gym">IsaacGym simulator</a> for
-            physics, but like many of my prior works, I use <a href="https://www.blender.org/">Blender</a> for
-            rendering (e.g., <a href="https://huy-ha.github.io/scalingup/">Scaling Up</a>, <a
-              href="https://flingbot.cs.columbia.edu/">FlingBot</a>).
-          </p>
-          <br>
-          <p>
-            Also, as in my prior works, I've published instructions for importing simulations into Blender.
-            If you're using IsaacGym, you can refer to this <a
-              href="https://github.com/real-stanford/umi-on-legs">project's codebase</a>.
-            If you're using PyBullet, you can use <a href="https://github.com/huy-ha/pybullet-blender-recorder">this
-              plugin</a> I developed for my <a href="https://github.com/real-stanford/decentralized-multiarm">multi-arm
-              motion planning project</a>.
-            If you're using MuJoCo, you can refer to the visualization instructions on my <a
-              href="https://github.com/real-stanford/scalingup/blob/master/docs/visualization.md">Scaling Up</a>'s
-            codebase.
-          </p>
-        </div>
-
-
-
-        <div class="block" id="wbc-prior-works">
-          <h3 class="title is-6">
-            Isn't this just <a href="https://manipulation-locomotion.github.io/">DeepWBC</a> or <a
-              href="https://wholebody-b1.github.io/">Visual Whole-Body Control</a>?
-          </h3>
-          <p>
-            These whole-body controllers are not manipulation-centric - they do not track end-effector trajectories in
-            task-frame.
-            Instead, they track instantaneous end-effector targets in body-frame, and depend on the quadruped's base
-            command.
-            This means their controllers can't be used to deploy existing table-top visuo-motor manipulation policies.
-          </p>
-        </div>
-      </div>
-</section>
-
 
 
 <footer class="footer">
@@ -737,21 +623,12 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            Website template modified from <a href="https://nerfies.github.io/">NeRFies</a> and <a
-              href="https://huy-ha.github.io/scalingup/">Scaling Up Distilling Down</a>.
+            Website template modified from <a href="https://umi-on-legs.github.io/">UMI-on-Legs</a>.
           </p>
           <p>
             This website is licensed under a <a rel="license"
               href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
               Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow and modify the <a
-              href="https://github.com/nerfies/nerfies.github.io">source
-              code</a> of this website as long as
-            you link back to the <a href="https://nerfies.github.io/">NeRFies</a> page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
           </p>
         </div>
       </div>
