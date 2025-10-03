@@ -63,16 +63,18 @@
               </span>
               <span>Paper</span>
             </a>
-            <a class="navbar-item  pl-4 pr-4" href="https://arxiv.org/abs/2407.10353">
+            <span class="navbar-item  pl-4 pr-4" style="opacity: 0.5; cursor: not-allowed;">
               <span class="icon" style="margin-right:5px;">
                 <img src="./static/images/arxiv.svg" alt="ArXiv" />
               </span>
-              <span>arXiv</span> </a>
-            <a href="https://youtu.be/4Bp0q3xHTxE" class="navbar-item  pl-4 pr-4">
+              <span>arXiv (coming soon)</span>
+            </span>
+            <span class="navbar-item  pl-4 pr-4" style="opacity: 0.5; cursor: not-allowed;">
               <span class="icon" style="margin-right:5px;">
                 <img src="./static/images/youtube.svg" alt="Youtube" />
               </span>
-              <span>Video</span> </a>
+              <span>Video (coming soon)</span>
+            </span>
             <span class="navbar-item  pl-4 pr-4">
               <a href="" class="button is-inverted is-large" disabled>
                 <span class="icon">
@@ -135,20 +137,20 @@
             </a>
           </span>
           <span class="link-block">
-            <a href="https://arxiv.org/abs/2407.10353" class="external-link button is-normal is-rounded is-dark">
+            <a href="" disabled class="external-link button is-normal is-rounded is-dark" style="opacity: 0.5; cursor: not-allowed;">
               <span class="icon">
                 <img src="./static/images/arxiv.svg" alt="ArXiv" />
               </span>
-              <span>arXiv</span>
+              <span>arXiv (coming soon)</span>
             </a>
           </span>
           <!-- Video Link. -->
           <span class="link-block">
-            <a href="https://youtu.be/4Bp0q3xHTxE" class="external-link button is-normal is-rounded is-dark">
+            <a href="" disabled class="external-link button is-normal is-rounded is-dark" style="opacity: 0.5; cursor: not-allowed;">
               <span class="icon">
                 <img src="./static/images/youtube.svg" alt="Youtube" />
               </span>
-              <span>Video</span>
+              <span>Video (coming soon)</span>
             </a>
           </span>
           <!-- Code Link. -->
@@ -171,11 +173,11 @@
   <div class="hero-foot is-hidden-mobile">
     <nav class="tabs is-boxed is-fullwidth is-size-4">
       <ul>
-        <li><a href="#problem">Problem Statement</a></li>
+        <li><a href="#problem">Problem</a></li>
         <li><a href="#method">Method</a></li>
-        <li><a href="#simulation">Benchmark Suite</a></li>
-        <li><a href="#rw-results">RW Results</a></li>
-        <li><a href="#technical-video">Technical Video</a></li>
+        <li><a href="#simulation">Benchmark</a></li>
+        <li><a href="#rw-results">Results</a></li>
+        <li><a style="opacity: 0.5; cursor: not-allowed; pointer-events: none;">Video (coming soon)</a></li>
         <li><a href="#team">Our Team</a></li>
       </ul>
     </nav>
@@ -258,8 +260,8 @@
       </button>
     </div>
 
-    <div id="sim-grid" class="columns is-multiline is-variable is-2 sim-fade" style="margin-top: 1.5rem;">
-      <div class="column is-half">
+    <div id="sim-grid" class="columns is-multiline is-mobile is-variable is-2 sim-fade" style="margin-top: 1.5rem;">
+      <div class="column is-half-tablet is-half-mobile">
         <div class="sim-tile">
           <video class="sim-task-video" data-task="cabinet" autoplay muted loop playsinline controls>
             <source src="./static/videos/sim_task_cabinet.mp4" type="video/mp4">
@@ -267,7 +269,7 @@
         </div>
         <p class="has-text-centered is-size-6 has-text-weight-semibold" style="margin-top: 0.25rem;">Open-and-Retrieve</p>
       </div>
-      <div class="column is-half">
+      <div class="column is-half-tablet is-half-mobile">
         <div class="sim-tile">
           <video class="sim-task-video" data-task="peg_in_hole" autoplay muted loop playsinline controls>
             <source src="./static/videos/sim_task_peg_in_hole.mp4" type="video/mp4">
@@ -275,7 +277,7 @@
         </div>
         <p class="has-text-centered is-size-6 has-text-weight-semibold" style="margin-top: 0.25rem;">Peg-in-Hole</p>
       </div>
-      <div class="column is-half">
+      <div class="column is-half-tablet is-half-mobile">
         <div class="sim-tile">
           <video class="sim-task-video" data-task="rotate_valve" autoplay muted loop playsinline controls>
             <source src="./static/videos/sim_task_rotate_valve.mp4" type="video/mp4">
@@ -283,7 +285,7 @@
         </div>
         <p class="has-text-centered is-size-6 has-text-weight-semibold" style="margin-top: 0.25rem;">Rotate-Valve</p>
       </div>
-      <div class="column is-half">
+      <div class="column is-half-tablet is-half-mobile">
         <div class="sim-tile">
           <video class="sim-task-video" data-task="pick_and_place" autoplay muted loop playsinline controls>
             <source src="./static/videos/sim_task_pick_and_place.mp4" type="video/mp4">
@@ -332,35 +334,35 @@
         <div class="columns is-mobile is-variable is-2">
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline controls>
+              <video class="rw-video" muted playsinline>
                 <source src="./static/videos/dp_cropped_8x/1_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline controls>
+              <video class="rw-video" muted playsinline>
                 <source src="./static/videos/dp_cropped_8x/2-fail_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline controls>
+              <video class="rw-video" muted playsinline>
                 <source src="./static/videos/dp_cropped_8x/3-fail_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline controls>
+              <video class="rw-video" muted playsinline>
                 <source src="./static/videos/dp_cropped_8x/4_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline controls>
+              <video class="rw-video" muted playsinline>
                 <source src="./static/videos/dp_cropped_8x/5_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
@@ -374,35 +376,35 @@
         <div class="columns is-mobile is-variable is-2">
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline controls>
+              <video class="rw-video" muted playsinline>
                 <source src="./static/videos/eadp_cropped_8x/1_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline controls>
+              <video class="rw-video" muted playsinline>
                 <source src="./static/videos/eadp_cropped_8x/2_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline controls>
+              <video class="rw-video" muted playsinline>
                 <source src="./static/videos/eadp_cropped_8x/3_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline controls>
+              <video class="rw-video" muted playsinline>
                 <source src="./static/videos/eadp_cropped_8x/4_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline controls>
+              <video class="rw-video" muted playsinline>
                 <source src="./static/videos/eadp_cropped_8x/5_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
@@ -449,7 +451,7 @@
        <div class="columns is-mobile is-variable is-2">
          <div class="column">
            <div class="sim-tile">
-             <video class="lemon-video" muted playsinline controls>
+             <video class="lemon-video" muted playsinline>
                <source src="./static/videos/lemon_1.mp4" type="video/mp4">
              </video>
            </div>
@@ -457,7 +459,7 @@
          </div>
          <div class="column">
            <div class="sim-tile">
-             <video class="lemon-video" muted playsinline controls>
+             <video class="lemon-video" muted playsinline>
                <source src="./static/videos/lemon_2.mp4" type="video/mp4">
              </video>
            </div>
@@ -465,7 +467,7 @@
          </div>
          <div class="column">
            <div class="sim-tile">
-             <video class="lemon-video" muted playsinline controls>
+             <video class="lemon-video" muted playsinline>
                <source src="./static/videos/lemon_3.mp4" type="video/mp4">
              </video>
            </div>
@@ -473,7 +475,7 @@
          </div>
          <div class="column">
            <div class="sim-tile">
-             <video class="lemon-video" muted playsinline controls>
+             <video class="lemon-video" muted playsinline>
                <source src="./static/videos/lemon_4.mp4" type="video/mp4">
              </video>
            </div>
@@ -481,7 +483,7 @@
          </div>
          <div class="column">
            <div class="sim-tile">
-             <video class="lemon-video" muted playsinline controls>
+             <video class="lemon-video" muted playsinline>
                <source src="./static/videos/lemon_5.mp4" type="video/mp4">
              </video>
            </div>
@@ -527,7 +529,7 @@
       <div class="columns is-mobile is-variable is-2 is-justify-content-center">
         <div class="column">
           <div class="sim-tile">
-            <video class="lightbulb-video" muted playsinline controls>
+            <video class="lightbulb-video" muted playsinline>
               <source src="./static/videos/lightbulb_1.mp4" type="video/mp4">
             </video>
           </div>
@@ -535,7 +537,7 @@
         </div>
         <div class="column">
           <div class="sim-tile">
-            <video class="lightbulb-video" muted playsinline controls>
+            <video class="lightbulb-video" muted playsinline>
               <source src="./static/videos/lightbulb_2.mp4" type="video/mp4">
             </video>
           </div>
@@ -543,7 +545,7 @@
         </div>
         <div class="column">
           <div class="sim-tile">
-            <video class="lightbulb-video" muted playsinline controls>
+            <video class="lightbulb-video" muted playsinline>
               <source src="./static/videos/lightbulb_3.mp4" type="video/mp4">
             </video>
           </div>
@@ -561,12 +563,9 @@
       <div class="columns is-max-desktop is-centered ">
         <div class="column is-9 is-centered">
           <h2 class="title is-3 has-text-centered is-size-5-mobile">Technical Summary Video</h2>
-          <iframe width="100%" style="aspect-ratio: 16 / 9;" src="
-            https://www.youtube.com/embed/4Bp0q3xHTxE?si=ocAPm8KVAz-RZK59" title="UMI on Air Technical Summary Video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+          <div style="aspect-ratio: 16 / 9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
+            <p style="color: #7a7a7a; font-size: 1.25rem; text-align: center;">Coming Soon</p>
+          </div>
         </div>
       </div>
     </div>
@@ -611,10 +610,10 @@
           <figure class="image is-128x128">
             <a href="https://chuerpan.com/">
               <img class="is-rounded
-                      " src="./static/images/chuer.jpg" alt="Cheur Pan">
+                      " src="./static/images/chuer.jpg" alt="Chuer Pan">
             </a>
           </figure>
-          <a href="https://chuerpan.com/">Cheur Pan</a><sup>‡</sup>
+          <a href="https://chuerpan.com/">Chuer Pan</a><sup>‡</sup>
         </div>
         <div class="author-block has-text-centered has-addons-centered">
           <figure class="image is-128x128">
@@ -698,10 +697,10 @@
           <figure class="image  is-96x96">
             <a href="https://chuerpan.com/">
               <img class="is-rounded
-                      " src="./static/images/chuer.jpg" alt="Cheur Pan">
+                      " src="./static/images/chuer.jpg" alt="Chuer Pan">
             </a>
           </figure>
-          <a href="https://chuerpan.com/">Cheur Pan</a><sup>‡</sup>
+          <a href="https://chuerpan.com/">Chuer Pan</a><sup>‡</sup>
         </div>
         <div class="author-block has-text-centered has-addons-centered">
           <figure class="image  is-96x96">
@@ -761,7 +760,7 @@
 
     </div>
     <br>
-    <pre class="is-hidden-mobile"><code>@inproceedings{to be added}</code></pre>
+    <pre class="is-hidden-mobile"><code>@inproceedings{coming soon}</code></pre>
     <p style="text-align: center;">
       If you have any questions, please contact <a href="https://hgupt3.github.io/">Harsh Gupta</a>.
     </p>
