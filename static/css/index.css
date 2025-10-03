@@ -394,6 +394,22 @@ transition: opacity 1.0s;
   box-shadow: 0 14px 36px rgba(16, 24, 40, 0.12);
 }
 
+/* Show controls on hover for simulation videos */
+#simulation video.sim-task-video::-webkit-media-controls {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#simulation video.sim-task-video:hover::-webkit-media-controls {
+  opacity: 1;
+}
+
+/* Hide volume controls for simulation videos */
+#simulation video.sim-task-video::-webkit-media-controls-volume-slider,
+#simulation video.sim-task-video::-webkit-media-controls-mute-button {
+  display: none;
+}
+
 /* Swipe transitions for video grid */
 #simulation #sim-grid .column {
   transition: transform 450ms cubic-bezier(0.4, 0, 0.2, 1), 
@@ -470,6 +486,38 @@ transition: opacity 1.0s;
   height: 100%;
   object-fit: cover;
   border-radius: 14px;
+}
+
+/* Show controls on hover for real-world videos */
+#rw-results video.rw-video::-webkit-media-controls {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#rw-results video.rw-video:hover::-webkit-media-controls {
+  opacity: 1;
+}
+
+/* Hide volume controls for real-world videos */
+#rw-results video.rw-video::-webkit-media-controls-volume-slider,
+#rw-results video.rw-video::-webkit-media-controls-mute-button {
+  display: none;
+}
+
+/* Show controls on hover for additional RW videos (lemon, lightbulb) */
+#rw-results video.rw-video-auto::-webkit-media-controls {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#rw-results video.rw-video-auto:hover::-webkit-media-controls {
+  opacity: 1;
+}
+
+/* Hide volume controls for additional RW videos */
+#rw-results video.rw-video-auto::-webkit-media-controls-volume-slider,
+#rw-results video.rw-video-auto::-webkit-media-controls-mute-button {
+  display: none;
 }
 
 /* Auto-aspect rounded tile for standalone RW demos */

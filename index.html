@@ -8,7 +8,7 @@
   <meta name="keywords" content="Robotics, Aerial Manipulation, Embodiment-Aware Guidance, Visuomotor Policies">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
-    UMI-on-Air
+    UMI on Air
   </title>
 
   <link rel="icon" type="image/png" href="./static/images/scs.png" />
@@ -90,15 +90,39 @@
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 9rem;">
+      <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 9rem; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);">
         UMI on Air
       </h1>
-      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 3rem;">
+      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 3rem; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);">
         Embodiment-Aware Guidance for <br class="is-hidden-mobile"> Embodiment-Agnostic Visuomotor Policies
       </h1>
-      <h1 class="is-2 is-italic is-size-4-mobile" style="font-size: 2rem; opacity: 80%;">
+      <div class="publication-authors is-size-4 is-size-6-mobile" style="margin-top: 0.75rem; color: white; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);">
+        <span>
+          <a href="https://hgupt3.github.io/" style="color: white !important;">Harsh Gupta</a><sup>†</sup>,
+          <a href="https://xiaofeng-guo.github.io/" style="color: white !important;">Xiaofeng Gao</a><sup>†</sup>,
+          <a href="https://huy-ha.github.io/" style="color: white !important;">Huy Ha</a><sup>‡</sup>,
+          <a href="https://chuerpan.com/" style="color: white !important;">Chuer Pan</a><sup>‡</sup>,
+          <a href="https://caomuqing.github.io/" style="color: white !important;">Muqing Cao</a><sup>†</sup>,
+          <a href="https://dongjaelee95.github.io/" style="color: white !important;">Dongjae Lee</a><sup>†</sup>,
+          <br>
+          <a href="https://theairlab.org/team/sebastian/" style="color: white !important;">Sebastian Scherer</a><sup>†</sup>,
+          <a href="https://shurans.github.io/" style="color: white !important;">Shuran Song</a><sup>‡</sup>,
+          <a href="https://www.gshi.me/" style="color: white !important;">Guanya Shi</a><sup>†</sup>
+        </span>
+      </div>
+      <div class="is-flex is-justify-content-center is-align-items-center" style="margin-top: 1rem; gap: 2rem;">
+        <div class="is-flex is-align-items-center" style="gap: 0.5rem;">
+          <img src="./static/images/cmu.png" alt="CMU" style="height: 5rem; filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));">
+          <span style="color: white; font-size: 1.5rem; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);">†</span>
+        </div>
+        <div class="is-flex is-align-items-center" style="gap: 0.5rem;">
+          <img src="./static/images/stanford.png" alt="Stanford" style="height: 5rem; filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));">
+          <span style="color: white; font-size: 1.5rem; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);">‡</span>
+        </div>
+      </div>
+      <!-- <h1 class="is-2 is-italic is-size-4-mobile" style="font-size: 2rem; opacity: 80%;">
         In submission
-      </h1>
+      </h1> -->
       <div class="column has-text-centered is-hidden-tablet">
         <div class="publication-links">
           <!-- PDF Link. -->
@@ -160,17 +184,12 @@
 
 <section class="section" id="problem">
   <div class="container is-max-desktop">
-    <div class="content has-text-justified" style="margin-bottom: 2rem; margin-top: 2rem;">
-      <p>
-        We introduce UMI-on-Air, a framework for embodiment-aware deployment of embodiment-agnostic manipulation
-        policies. Our approach leverages diverse, unconstrained human demonstrations collected with a handheld gripper (UMI)
-        to train generalizable visuomotor policies.
+    <div class="content has-text-centered" style="margin-bottom: 2rem; margin-top: 2rem;">
+      <p class="is-size-4" style="font-size: 1.5rem;">
+        Not all robots 🤖 are equally UMI-able - they can't all track UMI trajectories perfectly.
       </p>
-      <p style="margin-top: 0.75rem; margin-bottom: 3rem;">
-        A central challenge in transferring these policies to constrained robotic embodiments—such as aerial manipulators—is
-        the mismatch in control and robot dynamics, which often leads to out-of-distribution behaviors and poor execution.
-        To address this, we propose Embodiment-Aware Diffusion Policy (EADP), which couples a high-level UMI policy with a
-        low-level embodiment-specific controller at inference time.
+      <p class="is-size-4" style="margin-top: 0.75rem; margin-bottom: 3rem; font-size: 1.5rem;">
+        <strong>Our key idea 💡:</strong> allow the robot's controller to steer UMI's diffusion policy, leading to more robust cross-embodiment deployment. 🚀
       </p>
     </div>
     <div class="video-wrapper">
@@ -187,29 +206,33 @@
   </div>
 </section>
 
-<section class="section has-background-black" id="method" style="padding-top: 2rem; padding-bottom: 4rem; position: relative;">
-  <div class="video-progress">
-    <div class="video-progress__bar"></div>
-  </div>
-  <button class="video-restart-btn" type="button" aria-label="Restart video" title="Restart">
-    <i class="fas fa-rotate-right"></i>
-  </button>
-  <video id="method-video" muted loop playsinline style="height: auto; display: block; margin: 0 auto;">
-    <source src="./static/videos/method.mp4" type="video/mp4">
-  </video>
-  <div class="container is-max-desktop has-text-light" style="padding-top: 3.0rem;">
-    <div class="content has-text-justified">
-      <p>
-        Standard UMI policies generate action trajectories from visual observations, which are then tracked by controllers like MPC.
-        But this is a one-way process — the policy tells the robot how to move, while the robot cannot signal back whether those
-        actions are feasible. This mismatch often leads to failures, especially for embodiments like aerial manipulators.
-      </p>
-      <p>
-        Our solution is two-way communication. We compute the gradient of the controller’s tracking cost with respect to the policy’s
-        actions, and feed it back into the diffusion process as guidance. This steers trajectory generation toward actions that the
-        embodiment can actually execute, closing the gap between general policies and embodiment-specific constraints. We call this
-        approach Embodiment-Aware Diffusion Policy (EADP).
-      </p>
+<section class="section has-background-black" id="method" style="padding-top: 4rem; padding-bottom: 4rem;">
+  <div class="container is-max-desktop has-text-light">
+    <!-- Vanilla Diffusion Policy -->
+    <div style="margin-bottom: 3rem;">
+      <h3 class="title is-3 has-text-centered has-text-white is-size-4-mobile" style="margin-bottom: 2.5rem;">Vanilla Diffusion Policy</h3>
+      <img src="./static/images/vanilla.jpg" alt="Vanilla Diffusion Policy" style="width: 100%; height: auto; display: block; margin: 0 auto 2rem auto;" />
+      <div class="content has-text-justified">
+        <p>
+          Standard UMI policies generate action trajectories from visual observations, which are then tracked by controllers like MPC.
+          But this is a one-way process — the policy tells the robot how to move, while the robot cannot signal back whether those
+          actions are feasible. This mismatch often leads to failures, especially for embodiments like aerial manipulators.
+        </p>
+      </div>
+    </div>
+
+    <!-- EADP with Guidance -->
+    <div style="margin-top: 5rem;">
+      <h3 class="title is-3 has-text-centered has-text-white is-size-4-mobile" style="margin-bottom: 2rem;">Embodiment-Aware Diffusion Policy</h3>
+      <img src="./static/images/guidance.jpg" alt="Embodiment-Aware Diffusion Policy" style="width: 100%; height: auto; display: block; margin: 0 auto 2rem auto;" />
+      <div class="content has-text-justified">
+        <p>
+          Our solution is two-way communication. We compute the gradient of the controller's tracking cost with respect to the policy's
+          actions, and feed it back into the diffusion process as guidance. This steers trajectory generation toward actions that the
+          embodiment can actually execute, closing the gap between general policies and embodiment-specific constraints. We call this
+          approach Embodiment-Aware Diffusion Policy (EADP).
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -238,7 +261,7 @@
     <div id="sim-grid" class="columns is-multiline is-variable is-2 sim-fade" style="margin-top: 1.5rem;">
       <div class="column is-half">
         <div class="sim-tile">
-          <video class="sim-task-video" data-task="cabinet" autoplay muted loop playsinline>
+          <video class="sim-task-video" data-task="cabinet" autoplay muted loop playsinline controls>
             <source src="./static/videos/sim_task_cabinet.mp4" type="video/mp4">
           </video>
         </div>
@@ -246,7 +269,7 @@
       </div>
       <div class="column is-half">
         <div class="sim-tile">
-          <video class="sim-task-video" data-task="peg_in_hole" autoplay muted loop playsinline>
+          <video class="sim-task-video" data-task="peg_in_hole" autoplay muted loop playsinline controls>
             <source src="./static/videos/sim_task_peg_in_hole.mp4" type="video/mp4">
           </video>
         </div>
@@ -254,7 +277,7 @@
       </div>
       <div class="column is-half">
         <div class="sim-tile">
-          <video class="sim-task-video" data-task="rotate_valve" autoplay muted loop playsinline>
+          <video class="sim-task-video" data-task="rotate_valve" autoplay muted loop playsinline controls>
             <source src="./static/videos/sim_task_rotate_valve.mp4" type="video/mp4">
           </video>
         </div>
@@ -262,7 +285,7 @@
       </div>
       <div class="column is-half">
         <div class="sim-tile">
-          <video class="sim-task-video" data-task="pick_and_place" autoplay muted loop playsinline>
+          <video class="sim-task-video" data-task="pick_and_place" autoplay muted loop playsinline controls>
             <source src="./static/videos/sim_task_pick_and_place.mp4" type="video/mp4">
           </video>
         </div>
@@ -279,7 +302,7 @@
     </div>
 
     <div class="has-text-centered" style="margin-top: 2rem;">
-      <img src="./static/images/result.png" alt="Simulation Results" style="max-width: 100%; height: auto; margin-bottom: 2rem;" />
+      <img src="./static/images/result.svg" alt="Simulation Results" style="max-width: 100%; height: auto; margin-bottom: 2rem;" />
     </div>
   </div>
 </section>
@@ -288,6 +311,12 @@
 <section class="section has-background-black has-text-light" id="rw-results" style="padding-top: 3rem; padding-bottom: 3rem; position: relative;">
   <div class="container is-max-desktop">
     <h2 class="title is-2 has-text-centered has-text-white is-size-4-mobile">Real-World Results</h2>
+
+      <div class="content has-text-justified" style="margin-bottom: 1.5rem;">
+        <p>
+         We evaluate the <strong style="color: white;">Peg-In-Hole</strong> task in the real world on a 4cm hole with a 2cm peg, with randomized starting positions and a 3-minute timeout. 
+         While the baseline DP failed due to dropped peg or timeout (<strong style="color: #f44336; font-weight: bold;">3/5</strong>), EADP succeeded on all five trials (<strong style="color: #4CAF50; font-weight: bold;">5/5</strong>), demonstrating that EADP improves precision in the real world.
+    </div>
 
     <div class="rw-box" style="margin-top: 1.5rem;">
       <button id="rw-restart" class="video-restart-btn" type="button" aria-label="Restart videos" title="Restart all">
@@ -298,39 +327,39 @@
         <div class="columns is-multiline is-variable is-3">
       <!-- DP row -->
       <div class="column is-full">
-        <p class="has-text-centered has-text-grey-light is-size-6" style="margin-bottom: 1.0rem; margin-top: 0.75rem;">Diffusion Policy</p>
+        <p class="has-text-centered has-text-white is-size-5" style="margin-bottom: 1.0rem; margin-top: 0.75rem; font-weight: bold;">Diffusion Policy</p>
         <div class="columns is-mobile is-variable is-2">
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline>
+              <video class="rw-video" muted playsinline controls>
                 <source src="./static/videos/dp_cropped_8x/1_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline>
+              <video class="rw-video" muted playsinline controls>
                 <source src="./static/videos/dp_cropped_8x/2-fail_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline>
+              <video class="rw-video" muted playsinline controls>
                 <source src="./static/videos/dp_cropped_8x/3-fail_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline>
+              <video class="rw-video" muted playsinline controls>
                 <source src="./static/videos/dp_cropped_8x/4_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline>
+              <video class="rw-video" muted playsinline controls>
                 <source src="./static/videos/dp_cropped_8x/5_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
@@ -340,39 +369,39 @@
 
       <!-- EADP row -->
       <div class="column is-full" style="margin-top: 2rem;">
-        <p class="has-text-centered has-text-grey-light is-size-6" style="margin-bottom: 1.0rem;">Embodiment-Aware Diffusion Policy</p>
+        <p class="has-text-centered has-text-white is-size-5" style="margin-bottom: 1.0rem; font-weight: bold;">Embodiment-Aware Diffusion Policy</p>
         <div class="columns is-mobile is-variable is-2">
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline>
+              <video class="rw-video" muted playsinline controls>
                 <source src="./static/videos/eadp_cropped_8x/1_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline>
+              <video class="rw-video" muted playsinline controls>
                 <source src="./static/videos/eadp_cropped_8x/2_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline>
+              <video class="rw-video" muted playsinline controls>
                 <source src="./static/videos/eadp_cropped_8x/3_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline>
+              <video class="rw-video" muted playsinline controls>
                 <source src="./static/videos/eadp_cropped_8x/4_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
             <div class="sim-tile">
-              <video class="rw-video" muted playsinline>
+              <video class="rw-video" muted playsinline controls>
                 <source src="./static/videos/eadp_cropped_8x/5_cropped_8x.mp4" type="video/mp4">
               </video>
             </div>
@@ -382,24 +411,41 @@
       </div>
     </div>
     </div>
-       <!-- Additional RW looping demos (own rows, no outer box) -->
-       <div class="columns is-mobile is-variable is-2" style="margin-top: 3em;">
-        <div class="column is-full">
-          <div class="tile-auto">
-            <video autoplay muted loop playsinline>
-              <source src="./static/videos/lemon_harvesting.mp4" type="video/mp4">
-            </video>
-          </div>
+
+    <!-- Lemon Harvesting -->
+      <div class="content has-text-justified" style="margin-bottom: 1rem; margin-top: 3.5rem;">
+        <p>
+         We evaluate the <strong style="color: white;">Pick-and-Place</strong> task in the real world. The UAM must harvest a lemon from a randomized location and place it into a basket. 
+         EADP completed <strong style="color: #4CAF50; font-weight: bold;">4/5</strong> trials successfully, with the only failure occurring when an unripe (green) lemon was selected.
+      </p>
+    </div>
+    <div class="columns is-mobile is-variable is-2" style="margin-top: 1.5rem;">
+      <div class="column is-full">
+        <div class="tile-auto">
+          <video class="rw-video-auto" autoplay muted loop playsinline controls>
+            <source src="./static/videos/lemon_harvesting.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
-      <div class="columns is-mobile is-variable is-2" style="margin-top: 3rem; margin-bottom: 1rem;">
-        <div class="column is-full">
-          <div class="tile-auto">
-            <video autoplay muted loop playsinline>
-              <source src="./static/videos/lightbulb_insertion.mp4" type="video/mp4">
-            </video>
-          </div>
+    </div>
+
+    <!-- Lightbulb Insertion -->
+      <div class="content has-text-justified" style="margin-bottom: 1rem; margin-top: 3.5rem;">
+        <p>
+         We evaluate the <strong style="color: white;">Lightbulb-Insertion</strong> task in the real world. This long-horizon task requires threading a bulb into its socket until tight, followed by flipping the switch to confirm success. 
+         The task spans over 3 minutes of wall-clock time, underscoring the need for stability over extended horizons. 
+         EADP succeeded in all trials (<strong style="color: #4CAF50; font-weight: bold;">3/3</strong>).
+      </p>
+    </div>
+    <div class="columns is-mobile is-variable is-2" style="margin-top: 1.5rem; margin-bottom: 1rem;">
+      <div class="column is-full">
+        <div class="tile-auto">
+          <video class="rw-video-auto" autoplay muted loop playsinline controls>
+            <source src="./static/videos/lightbulb_insertion.mp4" type="video/mp4">
+          </video>
         </div>
+      </div>
+    </div>
   </div>
 </section>
 
