@@ -258,3 +258,123 @@ document.addEventListener('DOMContentLoaded', function () {
   } catch (e) {}
 });
 
+// Lemon trials toggle functionality
+document.addEventListener('DOMContentLoaded', function () {
+  var toggleBtn = document.getElementById('lemon-toggle-btn');
+  var toggleText = document.getElementById('lemon-toggle-text');
+  var toggleIcon = document.getElementById('lemon-toggle-icon');
+  var trialsContainer = document.getElementById('lemon-trials-container');
+  var lemonVideos = document.querySelectorAll('.lemon-video');
+  var restartBtn = document.getElementById('lemon-restart');
+  var isExpanded = false;
+
+  if (!toggleBtn || !trialsContainer) return;
+
+  toggleBtn.addEventListener('click', function() {
+    isExpanded = !isExpanded;
+    
+    if (isExpanded) {
+      // Expand
+      trialsContainer.style.maxHeight = '1000px';
+      trialsContainer.style.opacity = '1';
+      trialsContainer.style.marginTop = '2rem';
+      toggleText.textContent = 'See Less';
+      toggleIcon.classList.remove('fa-chevron-down');
+      toggleIcon.classList.add('fa-chevron-up');
+      
+      // Play all videos when expanded
+      setTimeout(function() {
+        lemonVideos.forEach(function(video) {
+          var p = video.play();
+          if (p && typeof p.then === 'function') { p.catch(function(){}); }
+        });
+      }, 300);
+    } else {
+      // Collapse
+      trialsContainer.style.maxHeight = '0';
+      trialsContainer.style.opacity = '0';
+      trialsContainer.style.marginTop = '0';
+      toggleText.textContent = 'Show Trials';
+      toggleIcon.classList.remove('fa-chevron-up');
+      toggleIcon.classList.add('fa-chevron-down');
+      
+      // Pause all videos when collapsed
+      lemonVideos.forEach(function(video) {
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
+  });
+
+  // Restart button functionality - play all videos at once
+  if (restartBtn) {
+    restartBtn.addEventListener('click', function() {
+      lemonVideos.forEach(function(video) {
+        video.currentTime = 0;
+        var p = video.play();
+        if (p && typeof p.then === 'function') { p.catch(function(){}); }
+      });
+    });
+  }
+});
+
+// Lightbulb trials toggle functionality
+document.addEventListener('DOMContentLoaded', function () {
+  var toggleBtn = document.getElementById('lightbulb-toggle-btn');
+  var toggleText = document.getElementById('lightbulb-toggle-text');
+  var toggleIcon = document.getElementById('lightbulb-toggle-icon');
+  var trialsContainer = document.getElementById('lightbulb-trials-container');
+  var lightbulbVideos = document.querySelectorAll('.lightbulb-video');
+  var restartBtn = document.getElementById('lightbulb-restart');
+  var isExpanded = false;
+
+  if (!toggleBtn || !trialsContainer) return;
+
+  toggleBtn.addEventListener('click', function() {
+    isExpanded = !isExpanded;
+    
+    if (isExpanded) {
+      // Expand
+      trialsContainer.style.maxHeight = '1000px';
+      trialsContainer.style.opacity = '1';
+      trialsContainer.style.marginTop = '2rem';
+      toggleText.textContent = 'See Less';
+      toggleIcon.classList.remove('fa-chevron-down');
+      toggleIcon.classList.add('fa-chevron-up');
+      
+      // Play all videos when expanded
+      setTimeout(function() {
+        lightbulbVideos.forEach(function(video) {
+          var p = video.play();
+          if (p && typeof p.then === 'function') { p.catch(function(){}); }
+        });
+      }, 300);
+    } else {
+      // Collapse
+      trialsContainer.style.maxHeight = '0';
+      trialsContainer.style.opacity = '0';
+      trialsContainer.style.marginTop = '0';
+      toggleText.textContent = 'Show Trials';
+      toggleIcon.classList.remove('fa-chevron-up');
+      toggleIcon.classList.add('fa-chevron-down');
+      
+      // Pause all videos when collapsed
+      lightbulbVideos.forEach(function(video) {
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
+  });
+
+  // Restart button functionality - play all videos at once
+  if (restartBtn) {
+    restartBtn.addEventListener('click', function() {
+      lightbulbVideos.forEach(function(video) {
+        video.currentTime = 0;
+        var p = video.play();
+        if (p && typeof p.then === 'function') { p.catch(function(){}); }
+      });
+    });
+  }
+});
+

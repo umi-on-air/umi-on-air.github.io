@@ -316,6 +316,7 @@
         <p>
          We evaluate the <strong style="color: white;">Peg-In-Hole</strong> task in the real world on a 4cm hole with a 2cm peg, with randomized starting positions and a 3-minute timeout. 
          While the baseline DP failed due to dropped peg or timeout (<strong style="color: #f44336; font-weight: bold;">3/5</strong>), EADP succeeded on all five trials (<strong style="color: #4CAF50; font-weight: bold;">5/5</strong>), demonstrating that EADP improves precision in the real world.
+         Videos are shown in 8x speed.
     </div>
 
     <div class="rw-box" style="margin-top: 1.5rem;">
@@ -412,32 +413,92 @@
     </div>
     </div>
 
-    <!-- Lemon Harvesting -->
-      <div class="content has-text-justified" style="margin-bottom: 1rem; margin-top: 3.5rem;">
-        <p>
-         We evaluate the <strong style="color: white;">Pick-and-Place</strong> task in the real world. The UAM must harvest a lemon from a randomized location and place it into a basket. 
-         EADP completed <strong style="color: #4CAF50; font-weight: bold;">4/5</strong> trials successfully, with the only failure occurring when an unripe (green) lemon was selected.
-      </p>
-    </div>
-    <div class="columns is-mobile is-variable is-2" style="margin-top: 1.5rem;">
-      <div class="column is-full">
-        <div class="tile-auto">
-          <video class="rw-video-auto" autoplay muted loop playsinline controls>
-            <source src="./static/videos/lemon_harvesting.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
+     <!-- Lemon Harvesting -->
+       <div class="content has-text-justified" style="margin-bottom: 1rem; margin-top: 3.5rem;">
+         <p>
+          We evaluate the <strong style="color: white;">Pick-and-Place</strong> task in the real world. The UAM must harvest a lemon from a randomized location and place it into a basket. 
+          EADP completed <strong style="color: #4CAF50; font-weight: bold;">4/5</strong> trials successfully, with the only failure occurring when an unripe (green) lemon was selected.
+       </p>
+     </div>
+     <div class="columns is-mobile is-variable is-2" style="margin-top: 1.5rem;">
+       <div class="column is-full">
+         <div class="tile-auto">
+           <video class="rw-video-auto" autoplay muted loop playsinline controls>
+             <source src="./static/videos/lemon_harvesting.mp4" type="video/mp4">
+           </video>
+         </div>
+       </div>
+     </div>
+     
+     <!-- Show/Hide Trials Button -->
+     <div class="has-text-centered" style="margin-top: 1rem;">
+       <button id="lemon-toggle-btn" class="button is-medium has-text-white" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease;">
+         <span id="lemon-toggle-text">Show Trials</span>
+         <span class="icon">
+           <i id="lemon-toggle-icon" class="fas fa-chevron-down"></i>
+         </span>
+       </button>
+     </div>
+
+     <!-- Expandable Trials Container -->
+     <div id="lemon-trials-container" class="rw-box" style="margin-top: 1rem; max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease;">
+       <button id="lemon-restart" class="video-restart-btn" type="button" aria-label="Restart videos" title="Restart all">
+         <i class="fas fa-rotate-right"></i>
+       </button>
+
+       <div class="columns is-multiline is-variable is-2">
+         <div class="column is-one-fifth">
+           <div class="sim-tile">
+             <video class="lemon-video" muted playsinline controls>
+               <source src="./static/videos/lemon_1.mp4" type="video/mp4">
+             </video>
+           </div>
+           <p class="has-text-centered has-text-white is-size-7" style="margin-top: 0.5rem;">Trial 1</p>
+         </div>
+         <div class="column is-one-fifth">
+           <div class="sim-tile">
+             <video class="lemon-video" muted playsinline controls>
+               <source src="./static/videos/lemon_2.mp4" type="video/mp4">
+             </video>
+           </div>
+           <p class="has-text-centered has-text-white is-size-7" style="margin-top: 0.5rem;">Trial 2</p>
+         </div>
+         <div class="column is-one-fifth">
+           <div class="sim-tile">
+             <video class="lemon-video" muted playsinline controls>
+               <source src="./static/videos/lemon_3.mp4" type="video/mp4">
+             </video>
+           </div>
+           <p class="has-text-centered has-text-white is-size-7" style="margin-top: 0.5rem;">Trial 3</p>
+         </div>
+         <div class="column is-one-fifth">
+           <div class="sim-tile">
+             <video class="lemon-video" muted playsinline controls>
+               <source src="./static/videos/lemon_4.mp4" type="video/mp4">
+             </video>
+           </div>
+           <p class="has-text-centered has-text-white is-size-7" style="margin-top: 0.5rem;">Trial 4</p>
+         </div>
+         <div class="column is-one-fifth">
+           <div class="sim-tile">
+             <video class="lemon-video" muted playsinline controls>
+               <source src="./static/videos/lemon_5.mp4" type="video/mp4">
+             </video>
+           </div>
+           <p class="has-text-centered has-text-white is-size-7" style="margin-top: 0.5rem;">Trial 5</p>
+         </div>
+       </div>
+     </div>
 
     <!-- Lightbulb Insertion -->
-      <div class="content has-text-justified" style="margin-bottom: 1rem; margin-top: 3.5rem;">
+      <div class="content has-text-justified" style="margin-bottom: 1rem; margin-top: 1rem;">
         <p>
          We evaluate the <strong style="color: white;">Lightbulb-Insertion</strong> task in the real world. This long-horizon task requires threading a bulb into its socket until tight, followed by flipping the switch to confirm success. 
          The task spans over 3 minutes of wall-clock time, underscoring the need for stability over extended horizons. 
          EADP succeeded in all trials (<strong style="color: #4CAF50; font-weight: bold;">3/3</strong>).
       </p>
     </div>
-    <div class="columns is-mobile is-variable is-2" style="margin-top: 1.5rem; margin-bottom: 1rem;">
+    <div class="columns is-mobile is-variable is-2" style="margin-top: 1.5rem;">
       <div class="column is-full">
         <div class="tile-auto">
           <video class="rw-video-auto" autoplay muted loop playsinline controls>
@@ -446,6 +507,51 @@
         </div>
       </div>
     </div>
+    
+    <!-- Show/Hide Trials Button -->
+    <div class="has-text-centered" style="margin-top: 1rem; margin-bottom: 0rem;">
+      <button id="lightbulb-toggle-btn" class="button is-medium has-text-white" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease;">
+        <span id="lightbulb-toggle-text">Show Trials</span>
+        <span class="icon">
+          <i id="lightbulb-toggle-icon" class="fas fa-chevron-down"></i>
+        </span>
+      </button>
+    </div>
+
+    <!-- Expandable Trials Container -->
+    <div id="lightbulb-trials-container" class="rw-box" style="margin-top: 1rem; max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease;">
+      <button id="lightbulb-restart" class="video-restart-btn" type="button" aria-label="Restart videos" title="Restart all">
+        <i class="fas fa-rotate-right"></i>
+      </button>
+
+      <div class="columns is-multiline is-variable is-2 is-justify-content-center">
+        <div class="column is-one-third">
+          <div class="sim-tile">
+            <video class="lightbulb-video" muted playsinline controls>
+              <source src="./static/videos/lightbulb_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="has-text-centered has-text-white is-size-7" style="margin-top: 0.5rem;">Trial 1</p>
+        </div>
+        <div class="column is-one-third">
+          <div class="sim-tile">
+            <video class="lightbulb-video" muted playsinline controls>
+              <source src="./static/videos/lightbulb_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="has-text-centered has-text-white is-size-7" style="margin-top: 0.5rem;">Trial 2</p>
+        </div>
+        <div class="column is-one-third">
+          <div class="sim-tile">
+            <video class="lightbulb-video" muted playsinline controls>
+              <source src="./static/videos/lightbulb_3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="has-text-centered has-text-white is-size-7" style="margin-top: 0.5rem;">Trial 3</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 

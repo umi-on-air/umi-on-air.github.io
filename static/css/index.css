@@ -520,6 +520,50 @@ transition: opacity 1.0s;
   display: none;
 }
 
+/* Show controls on hover for lemon trial videos */
+#rw-results video.lemon-video::-webkit-media-controls {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#rw-results video.lemon-video:hover::-webkit-media-controls {
+  opacity: 1;
+}
+
+/* Hide volume controls for lemon trial videos */
+#rw-results video.lemon-video::-webkit-media-controls-volume-slider,
+#rw-results video.lemon-video::-webkit-media-controls-mute-button {
+  display: none;
+}
+
+/* Toggle button hover effect */
+#lemon-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px);
+}
+
+/* Show controls on hover for lightbulb trial videos */
+#rw-results video.lightbulb-video::-webkit-media-controls {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#rw-results video.lightbulb-video:hover::-webkit-media-controls {
+  opacity: 1;
+}
+
+/* Hide volume controls for lightbulb trial videos */
+#rw-results video.lightbulb-video::-webkit-media-controls-volume-slider,
+#rw-results video.lightbulb-video::-webkit-media-controls-mute-button {
+  display: none;
+}
+
+/* Toggle button hover effect for lightbulb */
+#lightbulb-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px);
+}
+
 /* Auto-aspect rounded tile for standalone RW demos */
 #rw-results .tile-auto {
   border-radius: 14px;
