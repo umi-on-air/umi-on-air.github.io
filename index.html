@@ -212,7 +212,7 @@
     <div style="margin-bottom: 3rem;">
       <h3 class="title is-3 has-text-centered has-text-white is-size-4-mobile" style="margin-bottom: 2.5rem;">Vanilla Diffusion Policy</h3>
       <img src="./static/images/vanilla.jpg" alt="Vanilla Diffusion Policy" style="width: 100%; height: auto; display: block; margin: 0 auto 2rem auto;" />
-      <div class="content has-text-justified">
+      <div class="content has-text-centered">
         <p>
           Standard UMI policies generate action trajectories from visual observations, which are then tracked by controllers like MPC.
           But this is a one-way process — the policy tells the robot how to move, while the robot cannot signal back whether those
@@ -225,7 +225,7 @@
     <div style="margin-top: 5rem;">
       <h3 class="title is-3 has-text-centered has-text-white is-size-4-mobile" style="margin-bottom: 2rem;">Embodiment-Aware Diffusion Policy</h3>
       <img src="./static/images/guidance.jpg" alt="Embodiment-Aware Diffusion Policy" style="width: 100%; height: auto; display: block; margin: 0 auto 2rem auto;" />
-      <div class="content has-text-justified">
+      <div class="content has-text-centered">
         <p>
           Our solution is two-way communication. We compute the gradient of the controller's tracking cost with respect to the policy's
           actions, and feed it back into the diffusion process as guidance. This steers trajectory generation toward actions that the
@@ -241,7 +241,7 @@
   <div class="container is-max-desktop">
     <h2 class="title is-2 has-text-centered is-size-4-mobile">UMI Benchmark Suite</h2>
 
-    <div class="content has-text-justified" style="margin-top: 1rem; margin-bottom: 2rem;">
+    <div class="content has-text-centered" style="margin-top: 1rem; margin-bottom: 2rem;">
       <p>
         We evaluate EADP in a simulation suite covering four tasks: long-horizon manipulation (open-and-retrieve),
         precision control (peg-in-hole), and articulated interactions (pick-and-place and valve rotation). Videos are shown in 2x speed.
@@ -293,7 +293,7 @@
       </div>
     </div>
 
-    <div class="content has-text-justified" style="margin-top: 2rem; margin-bottom: 0.5rem;">
+    <div class="content has-text-centered" style="margin-top: 2rem; margin-bottom: 0.5rem;">
       <p>
         Across these benchmarks, performance consistently declines as embodiments become less capable of tracking policy trajectories,
         revealing the embodiment gap. EADP improves success rates across all tasks and narrows the embodiment gap compared to
@@ -312,7 +312,7 @@
   <div class="container is-max-desktop">
     <h2 class="title is-2 has-text-centered has-text-white is-size-4-mobile">Real-World Results</h2>
 
-      <div class="content has-text-justified" style="margin-bottom: 1.5rem;">
+      <div class="content has-text-centered" style="margin-bottom: 1.5rem;">
         <p>
          We evaluate the <strong style="color: white;">Peg-In-Hole</strong> task in the real world on a 4cm hole with a 2cm peg, with randomized starting positions and a 3-minute timeout. 
          While the baseline DP failed due to dropped peg or timeout (<strong style="color: #f44336; font-weight: bold;">3/5</strong>), EADP succeeded on all five trials (<strong style="color: #4CAF50; font-weight: bold;">5/5</strong>), demonstrating that EADP improves precision in the real world.
@@ -414,7 +414,7 @@
     </div>
 
      <!-- Lemon Harvesting -->
-       <div class="content has-text-justified" style="margin-bottom: 1rem; margin-top: 3.5rem;">
+       <div class="content has-text-centered" style="margin-bottom: 1rem; margin-top: 3.5rem;">
          <p>
           We evaluate the <strong style="color: white;">Pick-and-Place</strong> task in the real world. The UAM must harvest a lemon from a randomized location and place it into a basket. 
           EADP completed <strong style="color: #4CAF50; font-weight: bold;">4/5</strong> trials successfully, with the only failure occurring when an unripe (green) lemon was selected.
@@ -491,7 +491,7 @@
      </div>
 
     <!-- Lightbulb Insertion -->
-      <div class="content has-text-justified" style="margin-bottom: 1rem; margin-top: 1rem;">
+      <div class="content has-text-centered" style="margin-bottom: 1rem; margin-top: 1rem;">
         <p>
          We evaluate the <strong style="color: white;">Lightbulb-Insertion</strong> task in the real world. This long-horizon task requires threading a bulb into its socket until tight, followed by flipping the switch to confirm success. 
          The task spans over 3 minutes of wall-clock time, underscoring the need for stability over extended horizons. 
@@ -577,7 +577,7 @@
 
 <section class="section is-small" id="team">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 is-size-4-mobile">Our Team</h2>
+    <h2 class="title is-3 is-size-4-mobile has-text-centered">Our Team</h2>
     <div class="container has-text-centered">
       <div class="publication-authors is-flex justify-content is-justify-content-space-around is-hidden-mobile">
         <div class="author-block has-text-centered has-addons-centered">
@@ -762,7 +762,7 @@
     </div>
     <br>
     <pre class="is-hidden-mobile"><code>@inproceedings{to be added}</code></pre>
-    <p>
+    <p style="text-align: center;">
       If you have any questions, please contact <a href="https://hgupt3.github.io/">Harsh Gupta</a>.
     </p>
   </div>
@@ -773,7 +773,7 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
-        <div class="content">
+        <div class="content has-text-centered">
           <p>
             Website template modified from <a href="https://umi-on-legs.github.io/">UMI-on-Legs</a>.
           </p>
