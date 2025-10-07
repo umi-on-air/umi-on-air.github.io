@@ -179,6 +179,7 @@
           <li><a href="#rw-results">Results</a></li>
           <li><a href="#technical-video">Video</a></li>
           <li><a href="#team">Our Team</a></li>
+          <li><a href="#qa">Q&A</a></li>
       </ul>
     </nav>
   </div>
@@ -773,6 +774,35 @@
     <p style="text-align: center;">
       If you have any questions, please contact <a href="https://hgupt3.github.io/">Harsh Gupta</a>.
     </p>
+
+    <div class="content" id="qa" style="margin-top: 3rem;">
+      <h3 class="title is-4 has-text-centered">🧠 Questions and Answers</h3>
+      
+      <div style="margin-top: 2rem;">
+        <p><strong>Q: 🚁 Teleoperating drones is hard—how did you collect enough data?</strong></p>
+        <p style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+          We didn't directly teleoperate drones. Instead, we leveraged the <a href="https://umi-gripper.github.io/">Universal Manipulation Interface (UMI)</a> — a lightweight handheld gripper that lets humans record diverse manipulation demonstrations without using any robot hardware. This decouples data collection from specific embodiments, making it possible to gather large, in-the-wild datasets quickly while keeping the action space consistent across robots.
+        </p>
+    
+        <p><strong>Q: 🤖 Isn't this just <a href="https://umi-on-legs.github.io/">UMI-on-Legs</a> but with a drone controller?</strong></p>
+        <p style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+          Not quite. UMI-on-Air introduces ✨ <em>embodiment-aware guidance</em> ✨, where the low-level controller (like MPC for drones) provides gradient feedback during the diffusion sampling process. This two-way communication lets the policy adapt its trajectories to the dynamics of the embodiment in real time — something even the UR10e arm benefits from. So while <a href="https://umi-on-legs.github.io/">UMI-on-Legs</a> made UMI policies mobile, UMI-on-Air makes them embodiment-adaptive.
+        </p>
+    
+        <p><strong>Q: ⚙️ What can't the Embodiment-Aware Diffusion Policy (EADP) do?</strong></p>
+        <p style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+          EADP currently relies on analytical gradients from model-based controllers (e.g., MPC), which limits its use to systems with known dynamics. However, recent progress in learning-based control — especially reinforcement learning for legged and whole-body systems (e.g., <a href="https://umi-on-legs.github.io/">UMI-on-Legs</a>, <a href="https://unified-force.github.io/">UniFP</a>, <a href="https://omni.human2humanoid.com/">OmniH2O</a>) — suggests an exciting path forward 🚀. Future versions could use learned or RL-based controllers to provide the same kind of guidance, making EADP more general and scalable.
+        </p>
+    
+        <p><strong>Q: 🤔 What does "UMI-ability" mean?</strong></p>
+        <p style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+          "UMI-ability" measures how well a robot can execute trajectories produced by a UMI-trained policy. Robots like fixed-base arms are highly UMI-able—they can closely follow human demonstrations—while drones or legged robots face dynamic and control constraints that make them less so. UMI-on-Air helps bridge this gap by steering trajectories toward what's feasible for each embodiment.
+        </p>
+        <p style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+          The term actually came up when <a href="https://www.gshi.me/">Prof. Guanya Shi</a> was describing why some embodiments “just listen better” to UMI policies than others. It stuck — and later, <a href="https://huy-ha.github.io/">Huy Ha</a> decided to formalize it in the paper as a measurable notion.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
