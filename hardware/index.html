@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="UMI-on-Air Hardware: Open-source CAD for the soft gripper, full assembly, and Unitree D1 integration. Hosted on Onshape.">
+  <meta name="keywords" content="Robotics, Aerial Manipulation, Soft Gripper, CAD, Onshape, 3D Printing, TPU, Unitree D1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    UMI on Air — Hardware
+  </title>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://umi-on-air.github.io/hardware/">
+  <meta property="og:title" content="UMI on Air — Hardware">
+  <meta property="og:description" content="Open-source CAD for the UMI-on-Air gripper system. Soft TPU finger, full gripper assembly, and Unitree D1 reference integration. View, fork, and download from Onshape.">
+  <meta property="og:image" content="https://umi-on-air.github.io/static/images/teaser.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://umi-on-air.github.io/hardware/">
+  <meta property="twitter:title" content="UMI on Air — Hardware">
+  <meta property="twitter:description" content="Open-source CAD for the UMI-on-Air gripper system. Soft TPU finger, full gripper assembly, and Unitree D1 reference integration. View, fork, and download from Onshape.">
+  <meta property="twitter:image" content="https://umi-on-air.github.io/static/images/teaser.png">
+
+  <link rel="icon" type="image/png" href="../static/images/scs.png" />
+  <link rel="shortcut icon" href="../static/images/scs.png" type="image/png" />
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+
+  <!-- Font Awesome Free CDN — works on any origin (the kit below is domain-restricted and silently fails off-prod). -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+  <script src="https://kit.fontawesome.com/19914a84eb.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* Hardware-page-only styles */
+    body { background: #fff; }
+
+    /* Top navbar — clean white bar with subtle shadow, matches home navbar styling */
+    .hardware-navbar {
+      background: #fff;
+      border-bottom: 1px solid rgba(16, 24, 40, 0.08);
+      box-shadow: 0 1px 6px rgba(16, 24, 40, 0.04);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+    .hardware-navbar .navbar-brand .navbar-item {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 600;
+      color: #243b53;
+    }
+    .hardware-navbar .navbar-end .navbar-item {
+      color: #243b53;
+      font-family: 'Google Sans', sans-serif;
+    }
+    .hardware-navbar .navbar-end .navbar-item:hover { background: #f5f7fa; }
+    .hardware-navbar .navbar-item.is-active {
+      color: #1a73e8;
+      border-bottom: 2px solid #00d1b2;
+    }
+    .hardware-navbar .navbar-item img { height: 1.1em; }
+
+    /* Hero */
+    #hardware-hero {
+      padding: 3.5rem 1rem 2.5rem;
+      background: #fafbfc;
+      border-bottom: 1px solid rgba(16, 24, 40, 0.06);
+    }
+    #hardware-hero .title {
+      font-family: 'Google Sans', sans-serif;
+      color: #243b53;
+    }
+    #hardware-hero .subtitle {
+      color: #4a5568;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Part cards */
+    .part-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(16, 24, 40, 0.06);
+      border: 1px solid rgba(16, 24, 40, 0.06);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .part-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(16, 24, 40, 0.10);
+    }
+    .part-card .preview {
+      position: relative;
+      padding-top: 60%;
+      background: linear-gradient(135deg, #1a2942 0%, #243b53 100%);
+      overflow: hidden;
+    }
+    .part-card .preview::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(420px 200px at 20% 20%, rgba(0, 209, 178, 0.18), transparent 60%),
+        radial-gradient(360px 200px at 80% 80%, rgba(50, 115, 220, 0.20), transparent 60%);
+      pointer-events: none;
+    }
+    .part-card .preview-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      color: #fff;
+      z-index: 1;
+    }
+    .part-card .preview-inner .icon-big {
+      font-size: 2.6rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .part-card .preview-inner .preview-label {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .part-card .body {
+      padding: 1.1rem 1.2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+    .part-card .part-title {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #243b53;
+      word-break: break-word;
+    }
+    .part-card .part-desc {
+      color: #4a5568;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      flex: 1;
+    }
+    .part-card .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+    .part-card .button.is-cta {
+      background: linear-gradient(90deg, #00d1b2, #3273dc);
+      color: #fff;
+      border: none;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.85rem;
+    }
+    .part-card .button.is-cta:hover { filter: brightness(1.05); }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+    }
+    .pill.rigid { background: #e6f0ff; color: #1d4ed8; }
+    .pill.soft  { background: #ecfdf5; color: #047857; }
+    .pill.ref   { background: #fef3c7; color: #92400e; }
+
+    /* Print basics */
+    .print-card {
+      background: #f8fafc;
+      border: 1px solid rgba(16, 24, 40, 0.06);
+      border-radius: 14px;
+      padding: 1.4rem 1.4rem 1.2rem;
+    }
+    .print-card h3 { font-family: 'Google Sans', sans-serif; color: #243b53; }
+    .print-card .basics {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.6rem 0 0;
+    }
+    .print-card .basics li {
+      padding: 0.45rem 0;
+      color: #243b53;
+      border-top: 1px solid rgba(16, 24, 40, 0.06);
+    }
+    .print-card .basics li:first-child { border-top: 0; }
+
+    .ref-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Google Sans', sans-serif;
+      color: #1a73e8;
+      text-decoration: none;
+      padding: 0.55rem 0.85rem;
+      border: 1px solid rgba(26, 115, 232, 0.25);
+      border-radius: 8px;
+      background: #fff;
+      transition: background 150ms ease, border-color 150ms ease;
+    }
+    .ref-link:hover {
+      background: #eff6ff;
+      border-color: rgba(26, 115, 232, 0.45);
+      color: #1a73e8;
+    }
+    .ref-link .ref-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.1em;
+      height: 1.1em;
+    }
+    .ref-link .ref-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Mobile: keep navbar horizontal — Bulma defaults to vertical stack on <1024px which is wrong here. */
+    @media screen and (max-width: 1023px) {
+      .hardware-navbar .navbar { display: flex; flex-wrap: nowrap; align-items: center; }
+      .hardware-navbar .navbar-brand { flex: 0 0 auto; }
+      .hardware-navbar .navbar-menu {
+        display: flex !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        flex: 1 1 auto;
+      }
+      .hardware-navbar .navbar-end {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: auto;
+        flex-wrap: nowrap;
+        gap: 0.1rem;
+      }
+      .hardware-navbar .navbar-item { padding: 0.55rem 0.55rem; }
+    }
+    /* Phones: drop labels, keep icons only — and shrink the Code button. */
+    @media screen and (max-width: 640px) {
+      .hardware-navbar .navbar-brand .navbar-item { font-size: 1rem; padding: 0.5rem 0.6rem; }
+      .hardware-navbar .navbar-end .navbar-item > span:not(.icon) { display: none; }
+      .hardware-navbar .navbar-end .navbar-item .icon { margin-right: 0 !important; }
+      .hardware-navbar .navbar-end .button.is-large {
+        font-size: 0.95rem;
+        height: auto;
+        padding: 0.4rem 0.7rem;
+      }
+      .hardware-navbar .navbar-end .button.is-large > span:not(.icon) { display: none; }
+    }
+
+    @media screen and (max-width: 768px) {
+      #hardware-hero { padding: 2.5rem 1rem 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top navbar (sticky, clean white) -->
+  <header class="hardware-navbar">
+    <div class="container is-size-5">
+      <nav class="navbar" role="navigation" aria-label="main navigation" style="background: transparent;">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="../index.html" aria-label="UMI on Air home">
+            UMI on Air
+          </a>
+        </div>
+        <div class="navbar-menu is-active" style="background: transparent;">
+          <div class="navbar-end">
+            <a class="navbar-item pl-4 pr-4" href="../static/umi-on-air.pdf">
+              <span class="icon" style="margin-right:5px;">
+                <img src="../static/images/pdf.svg" alt="PDF" />
+              </span>
+              <span>Paper</span>
+            </a>
+            <a class="navbar-item pl-4 pr-4" href="https://arxiv.org/abs/2510.02614">
+              <span class="icon" style="margin-right:5px;">
+                <img src="../static/images/arxiv.svg" alt="ArXiv" />
+              </span>
+              <span>arXiv</span>
+            </a>
+            <a class="navbar-item pl-4 pr-4" href="https://youtu.be/8dvPsHvmWLk">
+              <span class="icon" style="margin-right:5px;">
+                <img src="../static/images/youtube.svg" alt="Youtube" />
+              </span>
+              <span>Video</span>
+            </a>
+            <a class="navbar-item is-active pl-4 pr-4" href="./index.html" aria-current="page">
+              <span class="icon" style="margin-right:5px;">
+                <i class="fas fa-wrench"></i>
+              </span>
+              <span>Hardware</span>
+            </a>
+            <span class="navbar-item pl-4 pr-4">
+              <a href="https://github.com/LeCAR-Lab/UMI-on-Air" class="button is-dark is-large">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hardware-hero">
+    <div class="container has-text-centered is-max-desktop">
+      <h1 class="title is-2 is-size-3-mobile" style="margin-bottom: 0.75rem;">Hardware</h1>
+      <p class="subtitle is-size-5 is-size-6-mobile">
+        All CAD files for the UMI-on-Air gripper system are open-source and hosted on Onshape.
+        Download STL/STEP files directly, view interactively in your browser, or fork and modify.
+      </p>
+    </div>
+  </section>
+
+  <!-- Part cards -->
+  <section class="section" id="parts">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-multiline is-variable is-4">
+        <!-- soft_gripper_finger -->
+        <div class="column is-one-third-desktop is-full-tablet">
+          <a class="part-card"
+             href="https://cad.onshape.com/documents/78950698dc3785d8914bc7aa/w/99601ecdff1b0fa785ae774f/e/ce6ee7a87f9e943d0f51c224"
+             target="_blank" rel="noopener"
+             style="text-decoration: none; color: inherit;">
+            <div class="preview">
+              <div class="preview-inner">
+                <span class="icon-big"><i class="fas fa-fingerprint"></i></span>
+                <span class="preview-label">soft_gripper_finger</span>
+              </div>
+            </div>
+            <div class="body">
+              <div class="part-title">
+                <span class="pill soft">TPU</span>soft_gripper_finger
+              </div>
+              <p class="part-desc">
+                Compliant TPU finger. Print in flexible filament. Two per gripper.
+              </p>
+              <div class="actions">
+                <span class="button is-small is-cta">
+                  <span class="icon is-small"><i class="fas fa-external-link-alt"></i></span>
+                  <span>View in Onshape</span>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- gripper -->
+        <div class="column is-one-third-desktop is-full-tablet">
+          <a class="part-card"
+             href="https://cad.onshape.com/documents/78950698dc3785d8914bc7aa/w/99601ecdff1b0fa785ae774f/e/7e02b27015cf34c3bd942dca"
+             target="_blank" rel="noopener"
+             style="text-decoration: none; color: inherit;">
+            <div class="preview">
+              <div class="preview-inner">
+                <span class="icon-big"><i class="fas fa-cogs"></i></span>
+                <span class="preview-label">gripper</span>
+              </div>
+            </div>
+            <div class="body">
+              <div class="part-title">
+                <span class="pill rigid">Assembly</span>gripper
+              </div>
+              <p class="part-desc">
+                Full gripper assembly with iPhone Pro mount and OAK camera bracket.
+              </p>
+              <div class="actions">
+                <span class="button is-small is-cta">
+                  <span class="icon is-small"><i class="fas fa-external-link-alt"></i></span>
+                  <span>View in Onshape</span>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- unitree_d1 -->
+        <div class="column is-one-third-desktop is-full-tablet">
+          <a class="part-card"
+             href="https://cad.onshape.com/documents/78950698dc3785d8914bc7aa/w/99601ecdff1b0fa785ae774f/e/4fd7fa0787a82d5c0a086e86"
+             target="_blank" rel="noopener"
+             style="text-decoration: none; color: inherit;">
+            <div class="preview">
+              <div class="preview-inner">
+                <span class="icon-big"><i class="fas fa-robot"></i></span>
+                <span class="preview-label">unitree_d1</span>
+              </div>
+            </div>
+            <div class="body">
+              <div class="part-title">
+                <span class="pill ref">Reference</span>unitree_d1
+              </div>
+              <p class="part-desc">
+                Full assembly — gripper mounted on a Unitree D1 arm. Reference for integration.
+              </p>
+              <div class="actions">
+                <span class="button is-small is-cta">
+                  <span class="icon is-small"><i class="fas fa-external-link-alt"></i></span>
+                  <span>View in Onshape</span>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <p class="has-text-centered is-size-7" style="color:#6b7280; margin-top: 0.75rem;">
+        Click any card to open the part on Onshape. Use right-click → Export to download STL or STEP.
+      </p>
+    </div>
+  </section>
+
+  <!-- Print Instructions (basics only) -->
+  <section class="section" id="print-instructions" style="padding-top: 1rem;">
+    <div class="container is-max-desktop">
+      <div class="print-card">
+        <h3 class="title is-5" style="margin-bottom: 0.6rem;">Printing &amp; Assembly</h3>
+        <p style="color:#4a5568; margin-bottom: 0.7rem;">
+          For slicer settings, BOM, and assembly steps, follow the original UMI guides:
+        </p>
+        <div class="is-flex is-flex-wrap-wrap" style="gap: 0.5rem;">
+          <a class="ref-link"
+             href="https://docs.google.com/document/d/1TPYwV9sNVPAi0ZlAupDMkXZ4CA1hsZx7YDMSmcEy6EU/edit?usp=sharing"
+             target="_blank" rel="noopener">
+            <span class="ref-icon"><img src="../static/images/doc.svg" alt="" /></span>
+            <span>UMI Hardware Guide</span>
+          </a>
+          <a class="ref-link"
+             href="https://youtu.be/EJmAg1Bnp-k"
+             target="_blank" rel="noopener">
+            <span class="ref-icon"><img src="../static/images/youtube.svg" alt="" /></span>
+            <span>3D Printing Tutorial</span>
+          </a>
+          <a class="ref-link"
+             href="https://youtu.be/x3ko0v_xwpg"
+             target="_blank" rel="noopener">
+            <span class="ref-icon"><img src="../static/images/youtube.svg" alt="" /></span>
+            <span>Assembly Tutorial</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- License & attribution -->
+  <section class="section" id="license" style="padding-top: 1rem;">
+    <div class="container is-max-desktop">
+      <div class="print-card">
+        <h3 class="title is-5" style="margin-bottom: 0.5rem;">License &amp; Attribution</h3>
+        <p style="color:#243b53; margin-bottom: 0.4rem;">
+          CAD shared under
+          <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>.
+          Builds on the
+          <a href="https://umi-gripper.github.io/" target="_blank" rel="noopener">Universal Manipulation Interface (UMI)</a>;
+          please cite UMI alongside UMI-on-Air.
+        </p>
+        <p style="color:#243b53; margin: 0;">
+          Questions or issues — contact
+          <a href="mailto:hgupt3@illinois.edu">hgupt3@illinois.edu</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (matches home) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              Website template modified from <a href="https://umi-on-legs.github.io/">UMI-on-Legs</a>.
+            </p>
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

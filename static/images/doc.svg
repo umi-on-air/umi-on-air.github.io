@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 65" width="47" height="65" aria-label="Document">
+  <path fill="#4285F4" d="M29.375 0H4.406A4.406 4.406 0 0 0 0 4.406V60.5a4.406 4.406 0 0 0 4.406 4.406h38.188A4.406 4.406 0 0 0 47 60.5V17.625L29.375 0z"/>
+  <path fill="#A1C2FA" d="M30.844 16.156h16.156L29.375 0v14.687c0 .811.658 1.469 1.469 1.469z"/>
+  <path fill="#FFF" d="M11 27h25v3H11zm0 7h25v3H11zm0 7h25v3H11zm0 7h17v3H11z"/>
+</svg>
